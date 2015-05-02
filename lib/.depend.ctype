@@ -1,0 +1,2 @@
+ctype.o: ctype.c \
+ /home/scott/myir/U-boot/u-boot-at91/include/linux/ctype.h

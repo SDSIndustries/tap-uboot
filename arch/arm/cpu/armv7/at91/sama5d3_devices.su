@@ -1,0 +1,13 @@
+sama5d3_devices.c:46:14:has_emac	8	static
+sama5d3_devices.c:51:14:has_gmac	8	static
+sama5d3_devices.c:56:14:has_lcdc	8	static
+sama5d3_devices.c:61:7:get_cpu_name	8	static
+sama5d3_devices.c:82:6:at91_serial0_hw_init	8	static
+sama5d3_devices.c:91:6:at91_serial1_hw_init	8	static
+sama5d3_devices.c:100:6:at91_serial2_hw_init	8	static
+sama5d3_devices.c:109:6:at91_seriald_hw_init	8	static
+sama5d3_devices.c:119:6:at91_spi0_hw_init	8	static
+sama5d3_devices.c:148:6:at91_mci_hw_init	8	static
+sama5d3_devices.c:181:6:at91_macb_hw_init	8	static
+sama5d3_devices.c:200:6:at91_gmacb_hw_init	8	static
+sama5d3_devices.c:226:6:at91_lcd_hw_init	8	static
