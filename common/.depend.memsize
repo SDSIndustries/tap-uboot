@@ -1,11 +1,11 @@
-memsize.o: memsize.c /home/scott/myir/U-boot/u-boot-at91/include/config.h \
- /home/scott/myir/U-boot/u-boot-at91/include/config_cmd_defaults.h \
- /home/scott/myir/U-boot/u-boot-at91/include/config_defaults.h \
- /home/scott/myir/U-boot/u-boot-at91/include/configs/controller.h \
- /home/scott/myir/U-boot/u-boot-at91/include/asm/hardware.h \
- /home/scott/myir/U-boot/u-boot-at91/include/asm/arch/hardware.h \
- /home/scott/myir/U-boot/u-boot-at91/include/asm/arch/sama5d3.h \
- /home/scott/myir/U-boot/u-boot-at91/include/config_cmd_default.h \
- /home/scott/myir/U-boot/u-boot-at91/include/asm/config.h \
- /home/scott/myir/U-boot/u-boot-at91/include/config_fallbacks.h \
- /home/scott/myir/U-boot/u-boot-at91/include/config_uncmd_spl.h
+memsize.o: memsize.c /home/scott/controller/tap-uboot/include/config.h \
+ /home/scott/controller/tap-uboot/include/config_cmd_defaults.h \
+ /home/scott/controller/tap-uboot/include/config_defaults.h \
+ /home/scott/controller/tap-uboot/include/configs/controller.h \
+ /home/scott/controller/tap-uboot/include/asm/hardware.h \
+ /home/scott/controller/tap-uboot/include/asm/arch/hardware.h \
+ /home/scott/controller/tap-uboot/include/asm/arch/sama5d3.h \
+ /home/scott/controller/tap-uboot/include/config_cmd_default.h \
+ /home/scott/controller/tap-uboot/include/asm/config.h \
+ /home/scott/controller/tap-uboot/include/config_fallbacks.h \
+ /home/scott/controller/tap-uboot/include/config_uncmd_spl.h

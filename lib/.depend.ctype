@@ -1,2 +1,1 @@
-ctype.o: ctype.c \
- /home/scott/myir/U-boot/u-boot-at91/include/linux/ctype.h
+ctype.o: ctype.c /home/scott/controller/tap-uboot/include/linux/ctype.h

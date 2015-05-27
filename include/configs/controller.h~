@@ -185,6 +185,7 @@
 #define CONFIG_RESET_PHY_R
 #define CONFIG_MACB_SEARCH_PHY
 
+
 /* MMC */
 #define CONFIG_CMD_MMC
 
@@ -226,7 +227,7 @@
 #define CONFIG_ENV_OFFSET_REDUND	0x100000
 #define CONFIG_ENV_SIZE			0x20000
 #define CONFIG_BOOTCOMMAND	"nand read 0x22000000 0x200000 0x600000; " \
-				"bootm 0x22000000 - 0x21000000"
+				"bootm 0x22000000"
 #else
 #define CONIG_ENV_IS_NOWHERE
 #endif
@@ -242,7 +243,8 @@
 	"mtdparts=atmel_nand:256k(bootstrap)ro,512k(uboot)ro,"		\
 	"256K(env),256k(evn_redundent),256k(spare),"			\
 	"512k(dtb),6M(kernel)ro,-(rootfs) "				\
-	"rootfstype=ubifs ubi.mtd=7 root=ubi0:rootfs"
+	"rootfstype=ubifs ubi.mtd=7 root=ubi0:rootfs "			\
+	"ethaddr=3e:7d:a3:16:c8:dc, ipaddr=192.168.0.1 " 
 #endif
 
 #define CONFIG_BAUDRATE			115200

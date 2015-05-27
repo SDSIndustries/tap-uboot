@@ -18,7 +18,7 @@
 	.global	main
 	.type	main, %function
 main:
-.LFB86:
+.LFB113:
 	.file 1 "lib/asm-offsets.c"
 	.loc 1 23 0
 	.cfi_startproc
@@ -40,13 +40,13 @@ main:
 	mov	r0, #0
 	bx	lr
 	.cfi_endproc
-.LFE86:
+.LFE113:
 	.size	main, .-main
 	.text
 .Letext0:
-	.file 2 "/home/scott/myir/U-boot/u-boot-at91/include/asm/u-boot.h"
-	.file 3 "/home/scott/myir/U-boot/u-boot-at91/include/linux/types.h"
-	.file 4 "/home/scott/myir/U-boot/u-boot-at91/include/net.h"
+	.file 2 "/home/scott/controller/tap-uboot/include/asm/u-boot.h"
+	.file 3 "/home/scott/controller/tap-uboot/include/linux/types.h"
+	.file 4 "/home/scott/controller/tap-uboot/include/net.h"
 	.section	.debug_info,"",%progbits
 .Ldebug_info0:
 	.4byte	0x2d4
@@ -408,8 +408,8 @@ main:
 	.byte	0x16
 	.byte	0x1
 	.4byte	0x4c
-	.4byte	.LFB86
-	.4byte	.LFE86
+	.4byte	.LFB113
+	.4byte	.LFE113
 	.byte	0x2
 	.byte	0x7d
 	.sleb128 0
@@ -683,14 +683,14 @@ main:
 	.byte	0
 	.2byte	0
 	.2byte	0
-	.4byte	.LFB86
-	.4byte	.LFE86-.LFB86
+	.4byte	.LFB113
+	.4byte	.LFE113-.LFB113
 	.4byte	0
 	.4byte	0
 	.section	.debug_ranges,"",%progbits
 .Ldebug_ranges0:
-	.4byte	.LFB86
-	.4byte	.LFE86
+	.4byte	.LFB113
+	.4byte	.LFE113
 	.4byte	0
 	.4byte	0
 	.section	.debug_line,"",%progbits
@@ -724,6 +724,8 @@ main:
 	.ascii	"enetaddr\000"
 .LASF26:
 	.ascii	"iobase\000"
+.LASF44:
+	.ascii	"/home/scott/controller/tap-uboot\000"
 .LASF39:
 	.ascii	"NETLOOP_FAIL\000"
 .LASF1:
@@ -750,8 +752,6 @@ main:
 	.ascii	"bd_info\000"
 .LASF7:
 	.ascii	"long long unsigned int\000"
-.LASF44:
-	.ascii	"/home/scott/myir/U-boot/u-boot-at91\000"
 .LASF8:
 	.ascii	"sizetype\000"
 .LASF30:

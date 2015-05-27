@@ -93,6 +93,13 @@ static void sama5d3xek_usb_hw_init(void)
 }
 #endif
 
+#ifdef CONFIG_TAP
+static void sama5d3xek_tap_hw_init(void)
+{
+	at91_set_pio_output(AT91_PIO_PORTB, 19, 0);
+}
+#endif
+
 #ifdef CONFIG_GENERIC_ATMEL_MCI
 static void sama5d3xek_mci_hw_init(void)
 {
@@ -178,6 +185,10 @@ void lcd_show_board_info(void)
 	ulong dram_size, nand_size;
 	int i;
 	char temp[32];
+
+#ifdef CONFIG_TAP
+	sama5d3xek_tap_hw_init();
+#endif
 
 	lcd_printf ("%s\n", U_BOOT_VERSION);
 	lcd_printf ("(C) 2014 SDS Industries, Inc.\n");

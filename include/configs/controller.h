@@ -33,6 +33,9 @@
 
 #define CONFIG_AT91_LEGACY
 
+/*TAP Hardware Setup*/
+#define CONFIG_TAP
+
 /* ARM asynchronous clock */
 #define CONFIG_SYS_AT91_SLOW_CLOCK      32768
 #define CONFIG_SYS_AT91_MAIN_CLOCK      12000000 /* from 12 MHz crystal */
@@ -185,6 +188,7 @@
 #define CONFIG_RESET_PHY_R
 #define CONFIG_MACB_SEARCH_PHY
 
+
 /* MMC */
 #define CONFIG_CMD_MMC
 
@@ -242,7 +246,8 @@
 	"mtdparts=atmel_nand:256k(bootstrap)ro,512k(uboot)ro,"		\
 	"256K(env),256k(evn_redundent),256k(spare),"			\
 	"512k(dtb),6M(kernel)ro,-(rootfs) "				\
-	"rootfstype=ubifs ubi.mtd=7 root=ubi0:rootfs"
+	"rootfstype=ubifs ubi.mtd=7 root=ubi0:rootfs "			\
+	"ethaddr=3e:7d:a3:16:c8:dc, ipaddr=192.168.0.1 " 
 #endif
 
 #define CONFIG_BAUDRATE			115200

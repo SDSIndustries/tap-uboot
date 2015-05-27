@@ -1,7 +1,6 @@
-div64.o: div64.c \
- /home/scott/myir/U-boot/u-boot-at91/include/linux/types.h \
- /home/scott/myir/U-boot/u-boot-at91/include/linux/config.h \
- /home/scott/myir/U-boot/u-boot-at91/include/linux/posix_types.h \
- /home/scott/myir/U-boot/u-boot-at91/include/linux/stddef.h \
- /home/scott/myir/U-boot/u-boot-at91/include/asm/posix_types.h \
- /home/scott/myir/U-boot/u-boot-at91/include/asm/types.h
+div64.o: div64.c /home/scott/controller/tap-uboot/include/linux/types.h \
+ /home/scott/controller/tap-uboot/include/linux/config.h \
+ /home/scott/controller/tap-uboot/include/linux/posix_types.h \
+ /home/scott/controller/tap-uboot/include/linux/stddef.h \
+ /home/scott/controller/tap-uboot/include/asm/posix_types.h \
+ /home/scott/controller/tap-uboot/include/asm/types.h
