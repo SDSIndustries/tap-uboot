@@ -186,6 +186,10 @@ void lcd_show_board_info(void)
 	int i;
 	char temp[32];
 
+#ifdef CONFIG_TAP
+	sama5d3xek_tap_hw_init();
+#endif
+
 	lcd_printf ("%s\n", U_BOOT_VERSION);
 	lcd_printf ("(C) 2014 SDS Industries, Inc.\n");
 	lcd_printf ("info@kilncontrol.com\n");

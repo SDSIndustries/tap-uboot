@@ -190,7 +190,7 @@
 
 
 /* MMC */
-#define CONFIG_CMD_MMC
+//#define CONFIG_CMD_MMC
 
 #ifdef CONFIG_CMD_MMC
 #define CONFIG_MMC

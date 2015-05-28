@@ -96,7 +96,7 @@ static void sama5d3xek_usb_hw_init(void)
 #ifdef CONFIG_TAP
 static void sama5d3xek_tap_hw_init(void)
 {
-	at91_set_pio_output(AT91_PIO_PORTB, 19, 0);
+	at91_set_pio_output(AT91_PIO_PORTB, 27, 0);
 }
 #endif
 

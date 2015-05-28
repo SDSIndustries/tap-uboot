@@ -1,4 +1,0 @@
-atmel_lcdfb.c:61:6:lcd_setcolreg	0	static
-atmel_lcdfb.c:73:6:lcd_9x5_ctrl_init	24	static
-atmel_lcdfb.c:245:6:lcd_ctrl_init	0	static
-atmel_lcdfb.c:342:7:calc_fbsize	0	static

@@ -7,7 +7,6 @@ controller.c:225:5:board_init	8	static
 controller.c:263:5:dram_init	8	static
 controller.c:271:6:reset_phy	0	static
 controller.c:276:5:board_eth_init	8	static
-controller.c:291:5:board_mmc_init	0	static
 controller.c:305:5:spi_cs_is_valid	0	static
 controller.c:310:6:spi_cs_activate	0	static
 controller.c:320:6:spi_cs_deactivate	0	static

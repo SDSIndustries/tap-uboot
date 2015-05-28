@@ -23,7 +23,7 @@ Linker script and memory map
                 0x0000000000000000                . = 0x0
                 0x0000000000000000                . = ALIGN (0x4)
 
-.text           0x0000000026f00000    0x348ec
+.text           0x0000000026f00000    0x34238
                 0x0000000026f00000                __image_copy_start = .
  arch/arm/cpu/armv7/start.o(.text)
  .text          0x0000000026f00000      0x4a0 arch/arm/cpu/armv7/start.o
@@ -39,7 +39,7 @@ Linker script and memory map
                 0x0000000026f001b0                save_boot_params
                 0x0000000026f001b4                cpu_init_cp15
  *(.text)
- .text          0x0000000026f004a0      0xafc arch/arm/cpu/armv7/at91/libat91.o
+ .text          0x0000000026f004a0      0xa0c arch/arm/cpu/armv7/at91/libat91.o
                 0x0000000026f004a0                has_emac
                 0x0000000026f0050c                has_gmac
                 0x0000000026f00544                has_lcdc
@@ -49,1191 +49,1186 @@ Linker script and memory map
                 0x0000000026f0067c                at91_serial2_hw_init
                 0x0000000026f006ac                at91_seriald_hw_init
                 0x0000000026f006dc                at91_spi0_hw_init
-                0x0000000026f007e0                at91_mci_hw_init
-                0x0000000026f008d0                at91_macb_hw_init
-                0x0000000026f00980                at91_gmacb_hw_init
-                0x0000000026f00a80                at91_lcd_hw_init
-                0x0000000026f00c70                at91_clock_init
-                0x0000000026f00d54                at91_periph_clk_enable
-                0x0000000026f00d84                arch_cpu_init
-                0x0000000026f00d90                arch_preboot_os
-                0x0000000026f00da8                print_cpuinfo
-                0x0000000026f00e24                get_chip_id
-                0x0000000026f00e34                get_extension_chip_id
-                0x0000000026f00e40                reset_cpu
-                0x0000000026f00e54                timer_init
-                0x0000000026f00e88                get_ticks
-                0x0000000026f00ec8                __udelay
-                0x0000000026f00f3c                get_timer
-                0x0000000026f00f94                get_tbclk
- .text          0x0000000026f00f9c      0x2e0 arch/arm/cpu/armv7/libarmv7.o
-                0x0000000026f010ec                invalidate_icache_all
-                0x0000000026f01104                __v7_outer_cache_enable
-                0x0000000026f01104                v7_outer_cache_enable
-                0x0000000026f01108                v7_outer_cache_disable
-                0x0000000026f01108                __v7_outer_cache_disable
-                0x0000000026f0110c                __v7_outer_cache_flush_all
-                0x0000000026f0110c                v7_outer_cache_flush_all
-                0x0000000026f01110                flush_dcache_all
-                0x0000000026f01124                v7_outer_cache_inval_all
-                0x0000000026f01124                __v7_outer_cache_inval_all
-                0x0000000026f01128                invalidate_dcache_all
-                0x0000000026f0113c                arm_init_before_mmu
-                0x0000000026f01164                v7_outer_cache_flush_range
-                0x0000000026f01164                __v7_outer_cache_flush_range
-                0x0000000026f01168                flush_dcache_range
-                0x0000000026f011a4                flush_cache
-                0x0000000026f011ac                __v7_outer_cache_inval_range
-                0x0000000026f011ac                v7_outer_cache_inval_range
-                0x0000000026f011b0                invalidate_dcache_range
-                0x0000000026f011ec                cpu_cache_initialization
-                0x0000000026f011f0                cleanup_before_linux
-                0x0000000026f01218                sdelay
-                0x0000000026f01224                sr32
-                0x0000000026f01248                wait_on_value
- .text          0x0000000026f0127c      0x8b8 arch/arm/lib/libarm.o
-                0x0000000026f0127c                __arch_cpu_init
-                0x0000000026f012d0                coloured_LED_init
-                0x0000000026f012d0                __coloured_LED_init
-                0x0000000026f012d4                __red_led_on
-                0x0000000026f012d4                red_led_on
-                0x0000000026f012d8                __red_led_off
-                0x0000000026f012d8                red_led_off
-                0x0000000026f012dc                green_led_on
-                0x0000000026f012dc                __green_led_on
-                0x0000000026f012e0                green_led_off
-                0x0000000026f012e0                __green_led_off
-                0x0000000026f012e4                yellow_led_on
-                0x0000000026f012e4                __yellow_led_on
-                0x0000000026f012e8                __yellow_led_off
-                0x0000000026f012e8                yellow_led_off
-                0x0000000026f012ec                blue_led_on
-                0x0000000026f012ec                __blue_led_on
-                0x0000000026f012f0                __blue_led_off
-                0x0000000026f012f0                blue_led_off
-                0x0000000026f012f4                __dram_init_banksize
-                0x0000000026f012f4                dram_init_banksize
-                0x0000000026f01310                board_init_r
-                0x0000000026f013d0                hang
-                0x0000000026f013e4                board_init_f
-                0x0000000026f01684                arch_lmb_reserve
-                0x0000000026f016a8                do_bootm_linux
-                0x0000000026f01700                bootz_setup
-                0x0000000026f01744                interrupt_init
-                0x0000000026f01760                enable_interrupts
-                0x0000000026f01764                disable_interrupts
-                0x0000000026f0176c                bad_mode
-                0x0000000026f0177c                show_regs
-                0x0000000026f018b8                do_undefined_instruction
-                0x0000000026f018d8                do_software_interrupt
-                0x0000000026f018f8                do_prefetch_abort
-                0x0000000026f01918                do_data_abort
-                0x0000000026f01938                do_not_used
-                0x0000000026f01958                do_fiq
-                0x0000000026f01978                do_irq
-                0x0000000026f01998                do_reset
-                0x0000000026f019c4                __flush_cache
-                0x0000000026f019c8                __flush_dcache_all
-                0x0000000026f019d4                enable_caches
-                0x0000000026f019d4                __enable_caches
-                0x0000000026f01a10                __arm_init_before_mmu
-                0x0000000026f01aa0                icache_enable
-                0x0000000026f01ab8                icache_disable
-                0x0000000026f01ad0                icache_status
-                0x0000000026f01adc                dcache_enable
-                0x0000000026f01b04                dcache_disable
-                0x0000000026f01b28                dcache_status
- .text          0x0000000026f01b34    0x15138 common/libcommon.o
-                0x0000000026f01b34                do_go_exec
-                0x0000000026f01b4c                do_go
-                0x0000000026f01c04                do_bootd
-                0x0000000026f0269c                __arch_preboot_os
-                0x0000000026f026a0                do_bootm_subcommand
-                0x0000000026f0291c                do_bootm
-                0x0000000026f02bb8                bootm_maybe_autostart
-                0x0000000026f02d88                do_coninfo
-                0x0000000026f02e40                common_diskboot
-                0x0000000026f030ec                do_echo
-                0x0000000026f0319c                do_exit
-                0x0000000026f031d0                do_fat_fsinfo
-                0x0000000026f03260                do_fat_fsload
-                0x0000000026f033c8                do_fat_ls
-                0x0000000026f03720                set_working_fdt_addr
-                0x0000000026f0375c                do_fdt
-                0x0000000026f043b4                do_flinfo
-                0x0000000026f043bc                do_flerase
-                0x0000000026f043c4                do_protect
-                0x0000000026f043d4                do_help
-                0x0000000026f04490                binary_test
-                0x0000000026f0465c                do_itest
-                0x0000000026f0484c                send_pad
-                0x0000000026f0487c                ktrans
-                0x0000000026f048a0                chk1
-                0x0000000026f048cc                s1_sendpacket
-                0x0000000026f048f4                send_ack
-                0x0000000026f04950                send_nack
-                0x0000000026f049ac                k_data_init
-                0x0000000026f049cc                k_data_save
-                0x0000000026f049f0                k_data_restore
-                0x0000000026f04a14                k_data_char
-                0x0000000026f04a64                handle_send_packet
-                0x0000000026f04c44                do_load_serial_bin
-                0x0000000026f050b0                do_mem_crc
-                0x0000000026f0515c                do_mem_base
-                0x0000000026f0519c                do_mem_mtest
-                0x0000000026f05340                do_mem_loop
-                0x0000000026f05434                do_mem_cp
-                0x0000000026f05508                do_mem_cmp
-                0x0000000026f0565c                do_mem_mw
-                0x0000000026f05718                do_mem_md
-                0x0000000026f05950                do_mem_nm
-                0x0000000026f05958                do_mem_mm
-                0x0000000026f05960                do_sleep
-                0x0000000026f059d0                do_mmcops
-                0x0000000026f05df8                do_mmcinfo
-                0x0000000026f0624c                do_nand
-                0x0000000026f06e00                do_nandboot
-                0x0000000026f0713c                do_ping
-                0x0000000026f07458                do_nfs
-                0x0000000026f07464                do_dhcp
-                0x0000000026f07470                do_tftpb
-                0x0000000026f0747c                do_bootp
-                0x0000000026f07818                do_env_save
-                0x0000000026f078e4                do_env_print
-                0x0000000026f07968                get_env_id
-                0x0000000026f07978                env_check_apply
-                0x0000000026f07bb4                _do_env_set
-                0x0000000026f07d6c                do_env_set
-                0x0000000026f07d8c                setenv
-                0x0000000026f08038                setenv_ulong
-                0x0000000026f08058                setenv_addr
-                0x0000000026f0808c                envmatch
-                0x0000000026f080f4                getenv_f
-                0x0000000026f081c4                getenv
-                0x0000000026f08230                getenv_ulong
-                0x0000000026f08260                do_env_edit
-                0x0000000026f0885c                source
-                0x0000000026f08a14                do_source
-                0x0000000026f08a84                do_false
-                0x0000000026f08a8c                do_true
-                0x0000000026f08a94                do_test
-                0x0000000026f08f0c                do_usbboot
-                0x0000000026f08f18                usb_get_class_desc
-                0x0000000026f08fdc                usb_display_class_sub
-                0x0000000026f09164                usb_display_string
-                0x0000000026f091a8                usb_display_desc
-                0x0000000026f092d4                usb_display_conf_desc
-                0x0000000026f09380                usb_display_if_desc
-                0x0000000026f09408                usb_display_ep_desc
-                0x0000000026f094cc                usb_display_config
-                0x0000000026f09550                usb_show_tree_graph
-                0x0000000026f0977c                usb_show_tree
-                0x0000000026f097ac                do_usb
-                0x0000000026f09ce4                do_version
-                0x0000000026f09d1c                do_imgextract
-                0x0000000026f0a0d8                find_cmd_tbl
-                0x0000000026f0a17c                find_cmd
-                0x0000000026f0a1a4                cmd_usage
-                0x0000000026f0a200                _do_help
-                0x0000000026f0a384                var_complete
-                0x0000000026f0a40c                cmd_auto_complete
-                0x0000000026f0a8d4                cmd_get_data_size
-                0x0000000026f0a924                cmd_process
-                0x0000000026f0aa78                serial_printf
-                0x0000000026f0aab8                fgetc
-                0x0000000026f0aae4                ftstc
-                0x0000000026f0ab10                fputc
-                0x0000000026f0ab38                fputs
-                0x0000000026f0ab60                fprintf
-                0x0000000026f0aba8                getc
-                0x0000000026f0abe4                tstc
-                0x0000000026f0ac20                putc
-                0x0000000026f0ac5c                puts
-                0x0000000026f0ac98                printf
-                0x0000000026f0ace4                vprintf
-                0x0000000026f0ad24                ctrlc
-                0x0000000026f0ad74                disable_ctrlc
-                0x0000000026f0ad8c                had_ctrlc
-                0x0000000026f0ad9c                clear_ctrlc
-                0x0000000026f0adb0                dbg
-                0x0000000026f0adbc                search_device
-                0x0000000026f0adec                console_assign
-                0x0000000026f0ae34                console_init_f
-                0x0000000026f0ae44                stdio_print_current_devices
-                0x0000000026f0aefc                console_init_r
-                0x0000000026f0b050                sbrk
-                0x0000000026f0b0b4                mem_malloc_init
-                0x0000000026f0b0d8                malloc_trim
-                0x0000000026f0b19c                free
-                0x0000000026f0b3cc                cfree
-                0x0000000026f0b3d0                malloc
-                0x0000000026f0b9a8                calloc
-                0x0000000026f0ba80                memalign
-                0x0000000026f0bb8c                pvalloc
-                0x0000000026f0bba4                valloc
-                0x0000000026f0bbb0                realloc
-                0x0000000026f0c06c                malloc_usable_size
-                0x0000000026f0c0a8                mallopt
-                0x0000000026f0c114                env_get_char_spec
-                0x0000000026f0c120                env_get_addr
-                0x0000000026f0c140                env_get_char_memory
-                0x0000000026f0c150                env_get_char
-                0x0000000026f0c180                set_default_env
-                0x0000000026f0c23c                set_default_vars
-                0x0000000026f0c270                env_import
-                0x0000000026f0c350                env_relocate
-                0x0000000026f0c380                env_complete
-                0x0000000026f0c454                env_init
-                0x0000000026f0c470                writeenv
-                0x0000000026f0c528                saveenv
-                0x0000000026f0c6fc                readenv
-                0x0000000026f0c7b8                env_relocate_spec
-                0x0000000026f0c954                get_version
-                0x0000000026f0c95c                jumptable_init
-                0x0000000026f0cd20                fdt_getprop_u32_default
-                0x0000000026f0cd68                fdt_find_and_setprop
-                0x0000000026f0cdd8                fdt_initrd
-                0x0000000026f0cf9c                fdt_chosen
-                0x0000000026f0d0a4                do_fixup_by_path
-                0x0000000026f0d0f8                do_fixup_by_path_u32
-                0x0000000026f0d13c                do_fixup_by_prop
-                0x0000000026f0d1d0                do_fixup_by_prop_u32
-                0x0000000026f0d22c                do_fixup_by_compat
-                0x0000000026f0d2b0                do_fixup_by_compat_u32
-                0x0000000026f0d2f4                fdt_fixup_memory_banks
-                0x0000000026f0d54c                fdt_fixup_memory
-                0x0000000026f0d56c                fdt_fixup_ethernet
-                0x0000000026f0d6ac                fdt_resize
-                0x0000000026f0d784                fdt_increase_size
-                0x0000000026f0d7ac                fdt_del_node_and_alias
-                0x0000000026f0d7f0                __of_translate_address
-                0x0000000026f0da34                fdt_translate_address
-                0x0000000026f0da40                fdt_node_offset_by_compat_reg
-                0x0000000026f0dac4                fdt_alloc_phandle
-                0x0000000026f0db1c                fdt_set_phandle
-                0x0000000026f0db60                fdt_create_phandle
-                0x0000000026f0dbc4                fdt_set_node_status
-                0x0000000026f0dcd0                fdt_set_status_by_alias
-                0x0000000026f0dcfc                fdt_verify_alias_address
-                0x0000000026f0ddc8                fdt_get_base_address
-                0x0000000026f0de9c                do_showvar
-                0x0000000026f0e434                get_local_var
-                0x0000000026f0e4bc                set_local_var
-                0x0000000026f0e92c                unset_local_var
-                0x0000000026f0e9d0                new_pipe
-                0x0000000026f0ea40                reserved_word
-                0x0000000026f0ed14                mapset
-                0x0000000026f0ed3c                update_ifs_map
-                0x0000000026f0edc8                parse_string_outer
-                0x0000000026f0fcb0                parse_file_outer
-                0x0000000026f0fcf4                u_boot_hush_start
-                0x0000000026f0fd94                image_check_hcrc
-                0x0000000026f0fde4                image_check_dcrc
-                0x0000000026f0fe20                image_multi_count
-                0x0000000026f0fe40                image_multi_getimg
-                0x0000000026f0fec8                getenv_yesno
-                0x0000000026f0fef0                getenv_bootm_low
-                0x0000000026f0ff20                getenv_bootm_size
-                0x0000000026f0ff80                getenv_bootm_mapsize
-                0x0000000026f0ffb0                memmove_wd
-                0x0000000026f0ffbc                genimg_print_size
-                0x0000000026f0ffec                get_table_entry_name
-                0x0000000026f10018                genimg_get_os_name
-                0x0000000026f10030                genimg_get_arch_name
-                0x0000000026f10048                genimg_get_type_name
-                0x0000000026f10060                genimg_get_comp_name
-                0x0000000026f10078                image_print_contents
-                0x0000000026f101f0                get_table_entry_id
-                0x0000000026f10240                genimg_get_os_id
-                0x0000000026f10258                genimg_get_arch_id
-                0x0000000026f10270                genimg_get_type_id
-                0x0000000026f10288                genimg_get_comp_id
-                0x0000000026f102a0                genimg_get_format
-                0x0000000026f102dc                genimg_get_image
-                0x0000000026f102e0                genimg_has_config
-                0x0000000026f102f0                boot_ramdisk_high
-                0x0000000026f10430                boot_fdt_add_mem_rsv_regions
-                0x0000000026f104b8                boot_relocate_fdt
-                0x0000000026f10650                fit_parse_conf
-                0x0000000026f106b4                fit_parse_subimage
-                0x0000000026f10718                fit_get_desc
-                0x0000000026f10744                fit_get_timestamp
-                0x0000000026f10794                fit_image_get_node
-                0x0000000026f107ec                fit_image_get_os
-                0x0000000026f10824                fit_image_get_arch
-                0x0000000026f1085c                fit_image_get_type
-                0x0000000026f10894                fit_image_get_comp
-                0x0000000026f108cc                fit_image_get_load
-                0x0000000026f10908                fit_image_get_entry
-                0x0000000026f10944                fit_image_get_data
-                0x0000000026f10980                fit_image_hash_get_algo
-                0x0000000026f109ac                fit_image_hash_get_value
-                0x0000000026f109e8                fit_image_print_hash
-                0x0000000026f10ae0                fit_image_print
-                0x0000000026f10d94                fit_set_timestamp
-                0x0000000026f10e1c                fit_image_check_hashes
-                0x0000000026f1107c                fit_all_image_check_hashes
-                0x0000000026f1115c                fit_image_check_os
-                0x0000000026f11190                fit_image_check_arch
-                0x0000000026f111c4                fit_image_check_type
-                0x0000000026f111f8                fit_image_check_comp
-                0x0000000026f1122c                fit_check_format
-                0x0000000026f1126c                fit_conf_get_node
-                0x0000000026f112d4                fit_conf_get_kernel_node
-                0x0000000026f112e0                fit_conf_get_ramdisk_node
-                0x0000000026f112ec                boot_get_ramdisk
-                0x0000000026f1184c                fit_conf_get_fdt_node
-                0x0000000026f11858                boot_get_fdt
-                0x0000000026f11dac                fit_conf_print
-                0x0000000026f11eb0                fit_print_contents
-                0x0000000026f121e8                lcd_putc
-                0x0000000026f1234c                lcd_puts
-                0x0000000026f12388                lcd_printf
-                0x0000000026f123c0                lcd_setmem
-                0x0000000026f12404                bitmap_plot
-                0x0000000026f12504                lcd_clear
-                0x0000000026f125ac                drv_lcd_init
-                0x0000000026f1284c                __show_boot_progress
-                0x0000000026f1284c                show_boot_progress
-                0x0000000026f12850                readline_into_buffer
-                0x0000000026f131ec                readline
-                0x0000000026f13208                parse_line
-                0x0000000026f13290                run_command
-                0x0000000026f13298                run_command_list
-                0x0000000026f132f4                main_loop
-                0x0000000026f133ec                do_run
-                0x0000000026f13460                get_ram_size
-                0x0000000026f135dc                srec_decode
-                0x0000000026f13838                stdio_get_list
-                0x0000000026f13844                stdio_get_by_name
-                0x0000000026f13894                stdio_clone
-                0x0000000026f138e0                stdio_register
-                0x0000000026f13924                stdio_init
-                0x0000000026f13a1c                usb_stop
-                0x0000000026f13a50                usb_disable_asynch
-                0x0000000026f13a70                usb_submit_int_msg
-                0x0000000026f13a74                usb_control_msg
-                0x0000000026f13d10                usb_bulk_msg
-                0x0000000026f13d84                usb_maxpacket
-                0x0000000026f13da0                usb_clear_halt
-                0x0000000026f13e48                usb_get_configuration_no
-                0x0000000026f13ee4                usb_set_interface
-                0x0000000026f13fa4                usb_set_protocol
-                0x0000000026f13ff8                usb_set_idle
-                0x0000000026f14054                usb_get_report
-                0x0000000026f140b8                usb_get_class_descriptor
-                0x0000000026f1411c                usb_string
-                0x0000000026f14224                usb_get_dev_index
-                0x0000000026f14250                usb_alloc_new_device
-                0x0000000026f142d4                usb_new_device
-                0x0000000026f1477c                usb_init
-                0x0000000026f14a08                usb_hub_reset
-                0x0000000026f14a1c                hub_port_reset
-                0x0000000026f14ac8                usb_hub_port_connect_change
-                0x0000000026f14e4c                usb_hub_probe
-                0x0000000026f15104                usb_stor_read
-                0x0000000026f152b0                usb_stor_write
-                0x0000000026f1545c                usb_stor_get_dev
-                0x0000000026f15480                usb_show_progress
-                0x0000000026f15484                usb_stor_info
-                0x0000000026f154f4                usb_stor_BBB_comdat
-                0x0000000026f155d8                usb_stor_CB_comdat
-                0x0000000026f157f4                usb_stor_CBI_get_status
-                0x0000000026f158bc                usb_stor_CB_transport
-                0x0000000026f15ae0                usb_stor_BBB_clear_endpt_stall
-                0x0000000026f15b2c                usb_stor_BBB_transport
-                0x0000000026f15d08                usb_storage_probe
-                0x0000000026f15f18                usb_stor_get_info
-                0x0000000026f161b4                usb_stor_scan
-                0x0000000026f163b4                CYGACC_COMM_IF_GETC_TIMEOUT
-                0x0000000026f166a0                CYGACC_COMM_IF_PUTC
-                0x0000000026f166a8                parse_num
-                0x0000000026f167c8                xyzModem_stream_open
-                0x0000000026f16914                xyzModem_stream_read
-                0x0000000026f16b68                xyzModem_stream_close
-                0x0000000026f16bb8                xyzModem_stream_terminate
-                0x0000000026f16c4c                xyzModem_error
- .text          0x0000000026f16c6c      0xcc4 disk/libdisk.o
-                0x0000000026f16c6c                get_dev
-                0x0000000026f16cd0                dev_print
-                0x0000000026f16ee4                init_part
-                0x0000000026f16f04                print_part
-                0x0000000026f16fec                get_partition_info
-                0x0000000026f17018                get_device
-                0x0000000026f17098                get_device_and_partition
-                0x0000000026f17884                test_part_dos
-                0x0000000026f178e8                print_part_dos
-                0x0000000026f17914                get_partition_info_dos
- .text          0x0000000026f17930      0x3cc drivers/gpio/libgpio.o
-                0x0000000026f17930                at91_set_pio_pullup
-                0x0000000026f17964                at91_set_pio_periph
-                0x0000000026f17998                at91_set_a_periph
-                0x0000000026f179f4                at91_set_b_periph
-                0x0000000026f17a4c                at91_set_c_periph
-                0x0000000026f17aa4                at91_set_d_periph
-                0x0000000026f17afc                at91_set_pio_input
-                0x0000000026f17b3c                at91_set_pio_output
-                0x0000000026f17b8c                at91_set_pio_deglitch
-                0x0000000026f17bc8                at91_set_pio_debounce
-                0x0000000026f17c0c                at91_set_pio_pulldown
-                0x0000000026f17c40                at91_set_pio_disable_schmitt_trig
-                0x0000000026f17c6c                at91_set_pio_multi_drive
-                0x0000000026f17c98                at91_set_pio_value
-                0x0000000026f17cc4                at91_get_pio_value
- .text          0x0000000026f17cfc      0x4f8 drivers/input/libinput.o
-                0x0000000026f17cfc                input_queue_ascii
-                0x0000000026f17d44                input_tstc
-                0x0000000026f17d8c                input_getc
-                0x0000000026f17de8                input_send_keycodes
-                0x0000000026f180b4                input_add_table
-                0x0000000026f180f4                input_init
-                0x0000000026f181a0                input_stdio_register
- .text          0x0000000026f181f4     0x1b48 drivers/mmc/libmmc.o
-                0x0000000026f181fc                __board_mmc_getcd
-                0x0000000026f181fc                board_mmc_getcd
-                0x0000000026f18204                mmc_send_cmd
-                0x0000000026f18240                mmc_send_status
-                0x0000000026f1830c                mmc_set_blocklen
-                0x0000000026f1833c                find_mmc_device
-                0x0000000026f1867c                mmc_read_blocks
-                0x0000000026f187dc                mmc_go_idle
-                0x0000000026f18828                sd_send_op_cond
-                0x0000000026f1896c                mmc_send_op_cond
-                0x0000000026f18aac                mmc_send_ext_csd
-                0x0000000026f18af8                mmc_switch
-                0x0000000026f18b4c                mmc_change_freq
-                0x0000000026f18bfc                mmc_switch_part
-                0x0000000026f18c38                mmc_getcd
-                0x0000000026f18c64                sd_switch
-                0x0000000026f18cc8                sd_change_freq
-                0x0000000026f18ebc                mmc_set_ios
-                0x0000000026f18ecc                mmc_set_clock
-                0x0000000026f18eec                mmc_set_bus_width
-                0x0000000026f18ef4                mmc_startup
-                0x0000000026f1956c                mmc_send_if_cond
-                0x0000000026f195e0                mmc_register
-                0x0000000026f19664                mmc_init
-                0x0000000026f19740                mmc_get_dev
-                0x0000000026f1976c                cpu_mmc_init
-                0x0000000026f19774                print_mmc_devices
-                0x0000000026f197d8                get_mmc_num
-                0x0000000026f197e8                mmc_initialize
-                0x0000000026f19c84                atmel_mci_init
- .text          0x0000000026f19d3c     0x7210 drivers/mtd/nand/libnand.o
-                0x0000000026f19d3c                nand_register
-                0x0000000026f19dbc                nand_init
-                0x0000000026f1b030                nand_update_bbt
-                0x0000000026f1b304                nand_scan_bbt
-                0x0000000026f1b7f0                nand_default_bbt
-                0x0000000026f1b8ec                nand_isbad_bbt
-                0x0000000026f1b9d0                nand_erase_opts
-                0x0000000026f1bcdc                nand_write_skip_bad
-                0x0000000026f1bf20                nand_read_skip_bad
-                0x0000000026f1c108                nand_calculate_ecc
-                0x0000000026f1c1fc                nand_correct_data
-                0x0000000026f1c338                nand_read_byte
-                0x0000000026f1c378                nand_write_buf
-                0x0000000026f1c3a4                nand_read_buf
-                0x0000000026f1c414                nand_write_buf16
-                0x0000000026f1c448                nand_read_buf16
-                0x0000000026f1e300                nand_wait_ready
-                0x0000000026f1ee4c                nand_erase_nand
-                0x0000000026f1f204                nand_scan_ident
-                0x0000000026f1f9d4                nand_scan_tail
-                0x0000000026f1ff74                nand_scan
-                0x0000000026f1ff98                nand_release
-                0x0000000026f20b44                atmel_nand_chip_init
-                0x0000000026f20f20                board_nand_init
- .text          0x0000000026f20f4c     0x10a8 drivers/mtd/spi/libspi_flash.o
-                0x0000000026f20fc0                spi_flash_cmd_read
-                0x0000000026f20fdc                spi_flash_cmd
-                0x0000000026f21008                spi_flash_cmd_write
-                0x0000000026f21024                spi_flash_read_common
-                0x0000000026f21070                spi_flash_cmd_read_fast
-                0x0000000026f210b0                spi_flash_cmd_poll_bit
-                0x0000000026f21178                spi_flash_cmd_wait_ready
-                0x0000000026f21184                spi_flash_cmd_write_multi
-                0x0000000026f2128c                spi_flash_cmd_erase
-                0x0000000026f21388                spi_flash_cmd_write_status
-                0x0000000026f213f0                spi_flash_probe
-                0x0000000026f214d8                spi_flash_free
-                0x0000000026f21814                dataflash_erase_at45
-                0x0000000026f21924                dataflash_erase_p2
-                0x0000000026f21bcc                dataflash_erase_block_at25
-                0x0000000026f21c44                dataflash_erase_at25
-                0x0000000026f21d6c                dataflash_write_at25
-                0x0000000026f21e60                spi_flash_probe_atmel
- .text          0x0000000026f21ff4     0x1030 drivers/net/libnet.o
-                0x0000000026f22724                gmacb_eth_initialize
-                0x0000000026f22ef8                macb_eth_initialize
- .text          0x0000000026f23024        0x0 drivers/pcmcia/libpcmcia.o
- .text          0x0000000026f23024        0x0 drivers/rtc/librtc.o
- .text          0x0000000026f23024       0xf4 drivers/serial/libserial.o
-                0x0000000026f23024                serial_setbrg
-                0x0000000026f23050                serial_init
-                0x0000000026f23098                serial_putc
-                0x0000000026f230cc                serial_puts
-                0x0000000026f230ec                serial_getc
-                0x0000000026f23108                serial_tstc
- .text          0x0000000026f23118      0x1f4 drivers/spi/libspi.o
-                0x0000000026f23118                spi_init
-                0x0000000026f2311c                spi_setup_slave
-                0x0000000026f231fc                spi_free_slave
-                0x0000000026f23200                spi_claim_bus
-                0x0000000026f23220                spi_release_bus
-                0x0000000026f23230                spi_xfer
- .text          0x0000000026f2330c     0x17b8 drivers/usb/host/libusb_host.o
-                0x0000000026f23720                sohci_submit_job
-                0x0000000026f23c44                rh_check_port_status
-                0x0000000026f23c94                submit_common_msg
-                0x0000000026f2430c                submit_bulk_msg
-                0x0000000026f24324                submit_control_msg
-                0x0000000026f24898                submit_int_msg
-                0x0000000026f248b4                usb_lowlevel_init
-                0x0000000026f24a18                usb_lowlevel_stop
-                0x0000000026f24a48                usb_cpu_init
-                0x0000000026f24a90                usb_cpu_stop
-                0x0000000026f24ac0                usb_cpu_init_fail
- .text          0x0000000026f24ac4      0x2d0 drivers/video/libvideo.o
-                0x0000000026f24ac4                lcd_ctrl_init
- .text          0x0000000026f24d94     0x19bc fs/fat/libfat.o
-                0x0000000026f25568                fat_register_device
-                0x0000000026f256d4                do_fat_read_at
-                0x0000000026f26214                do_fat_read
-                0x0000000026f26238                file_fat_detectfs
-                0x0000000026f26390                file_fat_ls
-                0x0000000026f263a0                file_fat_read_at
-                0x0000000026f263e4                file_fat_read
-                0x0000000026f263f8                file_getfsname
-                0x0000000026f26410                file_cd
-                0x0000000026f265fc                file_detectfs
-                0x0000000026f26638                file_ls
-                0x0000000026f266bc                file_read
- .text          0x0000000026f26750     0x206c lib/libfdt/libfdt.o
-                0x0000000026f26758                fdt_check_header
-                0x0000000026f267d8                fdt_offset_ptr
-                0x0000000026f26834                fdt_next_tag
-                0x0000000026f26930                _fdt_check_node_offset
-                0x0000000026f26968                _fdt_check_prop_offset
-                0x0000000026f269a0                fdt_next_node
-                0x0000000026f26a60                _fdt_find_string
-                0x0000000026f26ab8                fdt_move
-                0x0000000026f26bd0                fdt_string
-                0x0000000026f26bf0                fdt_get_mem_rsv
-                0x0000000026f26c48                fdt_num_mem_rsv
-                0x0000000026f26c80                fdt_subnode_offset_namelen
-                0x0000000026f26d4c                fdt_subnode_offset
-                0x0000000026f26d7c                fdt_get_name
-                0x0000000026f26de4                fdt_first_property_offset
-                0x0000000026f26e04                fdt_next_property_offset
-                0x0000000026f26e24                fdt_get_property_by_offset
-                0x0000000026f26e84                fdt_get_property_namelen
-                0x0000000026f26f34                fdt_get_property
-                0x0000000026f26f6c                fdt_getprop_namelen
-                0x0000000026f26f88                fdt_getprop_by_offset
-                0x0000000026f26fd4                fdt_getprop
-                0x0000000026f2700c                fdt_get_phandle
-                0x0000000026f27084                fdt_get_alias_namelen
-                0x0000000026f270cc                fdt_path_offset
-                0x0000000026f271b0                fdt_get_alias
-                0x0000000026f271d8                fdt_get_path
-                0x0000000026f27310                fdt_supernode_atdepth_offset
-                0x0000000026f273c8                fdt_node_depth
-                0x0000000026f273ec                fdt_parent_offset
-                0x0000000026f2741c                fdt_node_offset_by_prop_value
-                0x0000000026f274b8                fdt_node_offset_by_phandle
-                0x0000000026f2752c                fdt_node_check_compatible
-                0x0000000026f275b8                fdt_node_offset_by_compatible
-                0x0000000026f27a18                fdt_add_mem_rsv
-                0x0000000026f27a8c                fdt_del_mem_rsv
-                0x0000000026f27ae4                fdt_set_name
-                0x0000000026f27b68                fdt_setprop
-                0x0000000026f27d24                fdt_delprop
-                0x0000000026f27d88                fdt_add_subnode_namelen
-                0x0000000026f27e7c                fdt_add_subnode
-                0x0000000026f27eac                fdt_del_node
-                0x0000000026f27f04                fdt_open_into
-                0x0000000026f280b0                fdt_pack
-                0x0000000026f2810c                fdt_strerror
-                0x0000000026f28298                fdt_create
-                0x0000000026f28310                fdt_add_reservemap_entry
-                0x0000000026f283a0                fdt_finish_reservemap
-                0x0000000026f283b8                fdt_begin_node
-                0x0000000026f28420                fdt_end_node
-                0x0000000026f28458                fdt_property
-                0x0000000026f2858c                fdt_finish
-                0x0000000026f286ac                fdt_setprop_inplace
-                0x0000000026f286f0                fdt_nop_property
-                0x0000000026f2872c                _fdt_node_end_offset
-                0x0000000026f2876c                fdt_nop_node
- .text          0x0000000026f287bc     0x5670 lib/libgeneric.o
-                0x0000000026f287bc                cyg_crc16
-                0x0000000026f28800                crc32_no_comp
-                0x0000000026f288e0                crc32
-                0x0000000026f288f4                crc32_wd
-                0x0000000026f288f8                crc7
-                0x0000000026f28920                display_options
-                0x0000000026f28940                print_size
-                0x0000000026f28a78                print_buffer
-                0x0000000026f28bf8                __div64_32
-                0x0000000026f28cd4                gzfree
-                0x0000000026f28cdc                gzalloc
-                0x0000000026f28cec                zunzip
-                0x0000000026f28df8                gunzip
-                0x0000000026f28f08                hcreate_r
-                0x0000000026f28fbc                hdestroy_r
-                0x0000000026f2905c                hstrstr_r
-                0x0000000026f29108                hmatch_r
-                0x0000000026f291a8                hsearch_r
-                0x0000000026f29498                hdelete_r
-                0x0000000026f2954c                hexport_r
-                0x0000000026f297e4                himport_r
-                0x0000000026f29b80                ldiv
-                0x0000000026f29da0                lmb_dump_all
-                0x0000000026f29da4                lmb_init
-                0x0000000026f29dcc                lmb_add
-                0x0000000026f29dd0                lmb_free
-                0x0000000026f29edc                lmb_reserve
-                0x0000000026f29ee4                lmb_overlaps_region
-                0x0000000026f29f44                __lmb_alloc_base
-                0x0000000026f2a054                lmb_alloc_base
-                0x0000000026f2a088                lmb_alloc
-                0x0000000026f2a090                lmb_is_reserved
-                0x0000000026f2a0e0                board_lmb_reserve
-                0x0000000026f2a0e0                __board_lmb_reserve
-                0x0000000026f2a0e4                __arch_lmb_reserve
-                0x0000000026f2acc4                md5
-                0x0000000026f2ad2c                md5_wd
-                0x0000000026f2ad94                string_to_ip
-                0x0000000026f2adf4                qsort
-                0x0000000026f2aed4                strcmp_compar
-                0x0000000026f2c410                sha1_starts
-                0x0000000026f2c45c                sha1_update
-                0x0000000026f2c514                sha1_finish
-                0x0000000026f2c654                sha1_csum
-                0x0000000026f2c694                sha1_csum_wd
-                0x0000000026f2c6d4                sha1_hmac
-                0x0000000026f2c7fc                sha1_self_test
-                0x0000000026f2c804                strcpy
-                0x0000000026f2c820                strncpy
-                0x0000000026f2c844                strcat
-                0x0000000026f2c874                strncat
-                0x0000000026f2c8c8                strcmp
-                0x0000000026f2c8f4                strncmp
-                0x0000000026f2c934                strchr
-                0x0000000026f2c968                skip_spaces
-                0x0000000026f2c990                strlen
-                0x0000000026f2c9b0                strim
-                0x0000000026f2ca10                strrchr
-                0x0000000026f2ca4c                strnlen
-                0x0000000026f2ca7c                strdup
-                0x0000000026f2cab4                strspn
-                0x0000000026f2cafc                strpbrk
-                0x0000000026f2cb38                strtok
-                0x0000000026f2cbbc                strsep
-                0x0000000026f2cbf0                strswab
-                0x0000000026f2cc3c                memset
-                0x0000000026f2cca8                bcopy
-                0x0000000026f2cccc                memcpy
-                0x0000000026f2cd34                memmove
-                0x0000000026f2cd94                memcmp
-                0x0000000026f2cdc8                memscan
-                0x0000000026f2cdec                strstr
-                0x0000000026f2ce50                memchr
-                0x0000000026f2ce80                strmhz
-                0x0000000026f2ceec                udelay
-                0x0000000026f2cf1c                mdelay
-                0x0000000026f2da98                simple_strtoul
-                0x0000000026f2db58                strict_strtoul
-                0x0000000026f2dbd0                simple_strtol
-                0x0000000026f2dbf8                ustrtoul
-                0x0000000026f2dc68                simple_strtoull
-                0x0000000026f2dd54                vsprintf
-                0x0000000026f2dd58                sprintf
-                0x0000000026f2dd7c                panic
-                0x0000000026f2ddc0                __assert_fail
-                0x0000000026f2ddd4                simple_itoa
- .text          0x0000000026f2de2c     0x26c8 lib/zlib/libz.o
-                0x0000000026f2de2c                zcfree
-                0x0000000026f2de34                zcalloc
-                0x0000000026f2de3c                inflate_fast
-                0x0000000026f2e3e4                inflate_table
-                0x0000000026f2e998                inflateReset
-                0x0000000026f2ea14                inflateInit2_
-                0x0000000026f2eb18                inflateInit_
-                0x0000000026f2eb2c                inflateEnd
-                0x0000000026f2eb90                adler32
-                0x0000000026f2eecc                inflate
- .text          0x0000000026f304f4     0x3cb8 net/libnet.o
-                0x0000000026f304f4                ArpInit
-                0x0000000026f30520                arp_raw_request
-                0x0000000026f305e0                ArpRequest
-                0x0000000026f30658                ArpTimeoutCheck
-                0x0000000026f306c8                ArpReceive
-                0x0000000026f30f54                BootpRequest
-                0x0000000026f311fc                DhcpRequest
-                0x0000000026f31248                cpu_eth_init
-                0x0000000026f312b0                eth_parse_enetaddr
-                0x0000000026f31304                eth_getenv_enetaddr
-                0x0000000026f31324                eth_setenv_enetaddr
-                0x0000000026f31358                eth_getenv_enetaddr_by_index
-                0x0000000026f313a8                eth_get_dev_by_name
-                0x0000000026f31430                eth_get_dev_by_index
-                0x0000000026f31468                eth_get_dev_index
-                0x0000000026f31484                eth_write_hwaddr
-                0x0000000026f31600                eth_register
-                0x0000000026f3166c                eth_unregister
-                0x0000000026f31708                eth_initialize
-                0x0000000026f318c8                eth_halt
-                0x0000000026f318f8                eth_send
-                0x0000000026f31930                eth_rx
-                0x0000000026f3195c                eth_try_another
-                0x0000000026f319dc                eth_init
-                0x0000000026f31aa4                eth_set_current
-                0x0000000026f31b38                eth_get_name
-                0x0000000026f31ba4                net_auto_load
-                0x0000000026f31c04                NetStartAgain
-                0x0000000026f31d24                net_get_udp_handler
-                0x0000000026f31d34                net_set_udp_handler
-                0x0000000026f31d54                net_get_arp_handler
-                0x0000000026f31d64                net_set_arp_handler
-                0x0000000026f31d84                NetSetTimeout
-                0x0000000026f31dc0                NetCksum
-                0x0000000026f31df8                NetCksumOk
-                0x0000000026f31e18                NetReceive
-                0x0000000026f32080                NetEthHdrSize
-                0x0000000026f320b8                NetSetEther
-                0x0000000026f32154                net_update_ether
-                0x0000000026f321cc                net_set_ip_header
-                0x0000000026f32254                net_set_udp_header
-                0x0000000026f322dc                NetSendUDPPacket
-                0x0000000026f323e8                copy_filename
-                0x0000000026f32434                random_port
-                0x0000000026f3244c                ip_to_string
-                0x0000000026f32480                VLAN_to_string
-                0x0000000026f324c4                string_to_VLAN
-                0x0000000026f3250c                getenv_VLAN
-                0x0000000026f325cc                net_init
-                0x0000000026f32638                NetLoop
-                0x0000000026f3358c                NfsStart
-                0x0000000026f337dc                ping_start
-                0x0000000026f338f8                ping_receive
-                0x0000000026f33ec4                TftpStart
- .text          0x0000000026f341ac      0x26c board/sdsIndustries/controller/libcontroller.o
-                0x0000000026f341ac                sama5d3xek_nand_hw_init
-                0x0000000026f341fc                lcd_enable
-                0x0000000026f3420c                lcd_disable
-                0x0000000026f3421c                lcd_show_board_info
-                0x0000000026f342b8                board_early_init_f
-                0x0000000026f342c8                board_init
-                0x0000000026f34364                dram_init
-                0x0000000026f34384                reset_phy
-                0x0000000026f34388                board_eth_init
-                0x0000000026f343dc                board_mmc_init
-                0x0000000026f343e4                spi_cs_is_valid
-                0x0000000026f343f8                spi_cs_activate
-                0x0000000026f34408                spi_cs_deactivate
- .text          0x0000000026f34418       0x24 /home/scott/controller/tap-uboot/arch/arm/lib/eabi_compat.o
-                0x0000000026f34418                raise
-                0x0000000026f34434                __aeabi_unwind_cpp_pr0
-                0x0000000026f34438                __aeabi_unwind_cpp_pr1
- .text          0x0000000026f3443c      0x20c /usr/lib/gcc-cross/arm-linux-gnueabi/4.7/libgcc.a(_udivsi3.o)
-                0x0000000026f3443c                __udivsi3
-                0x0000000026f3443c                __aeabi_uidiv
-                0x0000000026f34628                __aeabi_uidivmod
- .text          0x0000000026f34648      0x240 /usr/lib/gcc-cross/arm-linux-gnueabi/4.7/libgcc.a(_divsi3.o)
-                0x0000000026f34648                __aeabi_idiv
-                0x0000000026f34648                __divsi3
-                0x0000000026f34868                __aeabi_idivmod
- .text          0x0000000026f34888       0x1c /usr/lib/gcc-cross/arm-linux-gnueabi/4.7/libgcc.a(_lshrdi3.o)
-                0x0000000026f34888                __aeabi_llsr
-                0x0000000026f34888                __lshrdi3
- .text          0x0000000026f348a4       0x1c /usr/lib/gcc-cross/arm-linux-gnueabi/4.7/libgcc.a(_ashrdi3.o)
-                0x0000000026f348a4                __ashrdi3
-                0x0000000026f348a4                __aeabi_lasr
- .text          0x0000000026f348c0       0x1c /usr/lib/gcc-cross/arm-linux-gnueabi/4.7/libgcc.a(_ashldi3.o)
-                0x0000000026f348c0                __ashldi3
-                0x0000000026f348c0                __aeabi_llsl
- .text          0x0000000026f348dc       0x10 /usr/lib/gcc-cross/arm-linux-gnueabi/4.7/libgcc.a(_dvmd_lnx.o)
-                0x0000000026f348dc                __aeabi_ldiv0
-                0x0000000026f348dc                __aeabi_idiv0
+                0x0000000026f007e0                at91_macb_hw_init
+                0x0000000026f00890                at91_gmacb_hw_init
+                0x0000000026f00990                at91_lcd_hw_init
+                0x0000000026f00b80                at91_clock_init
+                0x0000000026f00c64                at91_periph_clk_enable
+                0x0000000026f00c94                arch_cpu_init
+                0x0000000026f00ca0                arch_preboot_os
+                0x0000000026f00cb8                print_cpuinfo
+                0x0000000026f00d34                get_chip_id
+                0x0000000026f00d44                get_extension_chip_id
+                0x0000000026f00d50                reset_cpu
+                0x0000000026f00d64                timer_init
+                0x0000000026f00d98                get_ticks
+                0x0000000026f00dd8                __udelay
+                0x0000000026f00e4c                get_timer
+                0x0000000026f00ea4                get_tbclk
+ .text          0x0000000026f00eac      0x2e0 arch/arm/cpu/armv7/libarmv7.o
+                0x0000000026f00ffc                invalidate_icache_all
+                0x0000000026f01014                __v7_outer_cache_enable
+                0x0000000026f01014                v7_outer_cache_enable
+                0x0000000026f01018                v7_outer_cache_disable
+                0x0000000026f01018                __v7_outer_cache_disable
+                0x0000000026f0101c                __v7_outer_cache_flush_all
+                0x0000000026f0101c                v7_outer_cache_flush_all
+                0x0000000026f01020                flush_dcache_all
+                0x0000000026f01034                v7_outer_cache_inval_all
+                0x0000000026f01034                __v7_outer_cache_inval_all
+                0x0000000026f01038                invalidate_dcache_all
+                0x0000000026f0104c                arm_init_before_mmu
+                0x0000000026f01074                v7_outer_cache_flush_range
+                0x0000000026f01074                __v7_outer_cache_flush_range
+                0x0000000026f01078                flush_dcache_range
+                0x0000000026f010b4                flush_cache
+                0x0000000026f010bc                __v7_outer_cache_inval_range
+                0x0000000026f010bc                v7_outer_cache_inval_range
+                0x0000000026f010c0                invalidate_dcache_range
+                0x0000000026f010fc                cpu_cache_initialization
+                0x0000000026f01100                cleanup_before_linux
+                0x0000000026f01128                sdelay
+                0x0000000026f01134                sr32
+                0x0000000026f01158                wait_on_value
+ .text          0x0000000026f0118c      0x8a4 arch/arm/lib/libarm.o
+                0x0000000026f0118c                __arch_cpu_init
+                0x0000000026f011e0                coloured_LED_init
+                0x0000000026f011e0                __coloured_LED_init
+                0x0000000026f011e4                __red_led_on
+                0x0000000026f011e4                red_led_on
+                0x0000000026f011e8                __red_led_off
+                0x0000000026f011e8                red_led_off
+                0x0000000026f011ec                green_led_on
+                0x0000000026f011ec                __green_led_on
+                0x0000000026f011f0                green_led_off
+                0x0000000026f011f0                __green_led_off
+                0x0000000026f011f4                yellow_led_on
+                0x0000000026f011f4                __yellow_led_on
+                0x0000000026f011f8                __yellow_led_off
+                0x0000000026f011f8                yellow_led_off
+                0x0000000026f011fc                blue_led_on
+                0x0000000026f011fc                __blue_led_on
+                0x0000000026f01200                __blue_led_off
+                0x0000000026f01200                blue_led_off
+                0x0000000026f01204                __dram_init_banksize
+                0x0000000026f01204                dram_init_banksize
+                0x0000000026f01220                board_init_r
+                0x0000000026f012cc                hang
+                0x0000000026f012e0                board_init_f
+                0x0000000026f01580                arch_lmb_reserve
+                0x0000000026f015a4                do_bootm_linux
+                0x0000000026f015fc                bootz_setup
+                0x0000000026f01640                interrupt_init
+                0x0000000026f0165c                enable_interrupts
+                0x0000000026f01660                disable_interrupts
+                0x0000000026f01668                bad_mode
+                0x0000000026f01678                show_regs
+                0x0000000026f017b4                do_undefined_instruction
+                0x0000000026f017d4                do_software_interrupt
+                0x0000000026f017f4                do_prefetch_abort
+                0x0000000026f01814                do_data_abort
+                0x0000000026f01834                do_not_used
+                0x0000000026f01854                do_fiq
+                0x0000000026f01874                do_irq
+                0x0000000026f01894                do_reset
+                0x0000000026f018c0                __flush_cache
+                0x0000000026f018c4                __flush_dcache_all
+                0x0000000026f018d0                enable_caches
+                0x0000000026f018d0                __enable_caches
+                0x0000000026f0190c                __arm_init_before_mmu
+                0x0000000026f0199c                icache_enable
+                0x0000000026f019b4                icache_disable
+                0x0000000026f019cc                icache_status
+                0x0000000026f019d8                dcache_enable
+                0x0000000026f01a00                dcache_disable
+                0x0000000026f01a24                dcache_status
+ .text          0x0000000026f01a30    0x14b94 common/libcommon.o
+                0x0000000026f01a30                do_go_exec
+                0x0000000026f01a48                do_go
+                0x0000000026f01b00                do_bootd
+                0x0000000026f02598                __arch_preboot_os
+                0x0000000026f0259c                do_bootm_subcommand
+                0x0000000026f02818                do_bootm
+                0x0000000026f02ab4                bootm_maybe_autostart
+                0x0000000026f02c84                do_coninfo
+                0x0000000026f02d3c                common_diskboot
+                0x0000000026f02fe8                do_echo
+                0x0000000026f03098                do_exit
+                0x0000000026f030cc                do_fat_fsinfo
+                0x0000000026f0315c                do_fat_fsload
+                0x0000000026f032c4                do_fat_ls
+                0x0000000026f0361c                set_working_fdt_addr
+                0x0000000026f03658                do_fdt
+                0x0000000026f042b0                do_flinfo
+                0x0000000026f042b8                do_flerase
+                0x0000000026f042c0                do_protect
+                0x0000000026f042d0                do_help
+                0x0000000026f0438c                binary_test
+                0x0000000026f04558                do_itest
+                0x0000000026f04748                send_pad
+                0x0000000026f04778                ktrans
+                0x0000000026f0479c                chk1
+                0x0000000026f047c8                s1_sendpacket
+                0x0000000026f047f0                send_ack
+                0x0000000026f0484c                send_nack
+                0x0000000026f048a8                k_data_init
+                0x0000000026f048c8                k_data_save
+                0x0000000026f048ec                k_data_restore
+                0x0000000026f04910                k_data_char
+                0x0000000026f04960                handle_send_packet
+                0x0000000026f04b40                do_load_serial_bin
+                0x0000000026f04fac                do_mem_crc
+                0x0000000026f05058                do_mem_base
+                0x0000000026f05098                do_mem_mtest
+                0x0000000026f0523c                do_mem_loop
+                0x0000000026f05330                do_mem_cp
+                0x0000000026f05404                do_mem_cmp
+                0x0000000026f05558                do_mem_mw
+                0x0000000026f05614                do_mem_md
+                0x0000000026f0584c                do_mem_nm
+                0x0000000026f05854                do_mem_mm
+                0x0000000026f0585c                do_sleep
+                0x0000000026f05ba4                do_nand
+                0x0000000026f06758                do_nandboot
+                0x0000000026f06a94                do_ping
+                0x0000000026f06db0                do_nfs
+                0x0000000026f06dbc                do_dhcp
+                0x0000000026f06dc8                do_tftpb
+                0x0000000026f06dd4                do_bootp
+                0x0000000026f07170                do_env_save
+                0x0000000026f0723c                do_env_print
+                0x0000000026f072c0                get_env_id
+                0x0000000026f072d0                env_check_apply
+                0x0000000026f0750c                _do_env_set
+                0x0000000026f076c4                do_env_set
+                0x0000000026f076e4                setenv
+                0x0000000026f07990                setenv_ulong
+                0x0000000026f079b0                setenv_addr
+                0x0000000026f079e4                envmatch
+                0x0000000026f07a4c                getenv_f
+                0x0000000026f07b1c                getenv
+                0x0000000026f07b88                getenv_ulong
+                0x0000000026f07bb8                do_env_edit
+                0x0000000026f081b4                source
+                0x0000000026f0836c                do_source
+                0x0000000026f083dc                do_false
+                0x0000000026f083e4                do_true
+                0x0000000026f083ec                do_test
+                0x0000000026f08864                do_usbboot
+                0x0000000026f08870                usb_get_class_desc
+                0x0000000026f08934                usb_display_class_sub
+                0x0000000026f08abc                usb_display_string
+                0x0000000026f08b00                usb_display_desc
+                0x0000000026f08c2c                usb_display_conf_desc
+                0x0000000026f08cd8                usb_display_if_desc
+                0x0000000026f08d60                usb_display_ep_desc
+                0x0000000026f08e24                usb_display_config
+                0x0000000026f08ea8                usb_show_tree_graph
+                0x0000000026f090d4                usb_show_tree
+                0x0000000026f09104                do_usb
+                0x0000000026f0963c                do_version
+                0x0000000026f09674                do_imgextract
+                0x0000000026f09a30                find_cmd_tbl
+                0x0000000026f09ad4                find_cmd
+                0x0000000026f09afc                cmd_usage
+                0x0000000026f09b58                _do_help
+                0x0000000026f09cdc                var_complete
+                0x0000000026f09d64                cmd_auto_complete
+                0x0000000026f0a22c                cmd_get_data_size
+                0x0000000026f0a27c                cmd_process
+                0x0000000026f0a3d0                serial_printf
+                0x0000000026f0a410                fgetc
+                0x0000000026f0a43c                ftstc
+                0x0000000026f0a468                fputc
+                0x0000000026f0a490                fputs
+                0x0000000026f0a4b8                fprintf
+                0x0000000026f0a500                getc
+                0x0000000026f0a53c                tstc
+                0x0000000026f0a578                putc
+                0x0000000026f0a5b4                puts
+                0x0000000026f0a5f0                printf
+                0x0000000026f0a63c                vprintf
+                0x0000000026f0a67c                ctrlc
+                0x0000000026f0a6cc                disable_ctrlc
+                0x0000000026f0a6e4                had_ctrlc
+                0x0000000026f0a6f4                clear_ctrlc
+                0x0000000026f0a708                dbg
+                0x0000000026f0a714                search_device
+                0x0000000026f0a744                console_assign
+                0x0000000026f0a78c                console_init_f
+                0x0000000026f0a79c                stdio_print_current_devices
+                0x0000000026f0a854                console_init_r
+                0x0000000026f0a9a8                sbrk
+                0x0000000026f0aa0c                mem_malloc_init
+                0x0000000026f0aa30                malloc_trim
+                0x0000000026f0aaf4                free
+                0x0000000026f0ad24                cfree
+                0x0000000026f0ad28                malloc
+                0x0000000026f0b300                calloc
+                0x0000000026f0b3d8                memalign
+                0x0000000026f0b4e4                pvalloc
+                0x0000000026f0b4fc                valloc
+                0x0000000026f0b508                realloc
+                0x0000000026f0b9c4                malloc_usable_size
+                0x0000000026f0ba00                mallopt
+                0x0000000026f0ba6c                env_get_char_spec
+                0x0000000026f0ba78                env_get_addr
+                0x0000000026f0ba98                env_get_char_memory
+                0x0000000026f0baa8                env_get_char
+                0x0000000026f0bad8                set_default_env
+                0x0000000026f0bb94                set_default_vars
+                0x0000000026f0bbc8                env_import
+                0x0000000026f0bca8                env_relocate
+                0x0000000026f0bcd8                env_complete
+                0x0000000026f0bdac                env_init
+                0x0000000026f0bdc8                writeenv
+                0x0000000026f0be80                saveenv
+                0x0000000026f0c054                readenv
+                0x0000000026f0c110                env_relocate_spec
+                0x0000000026f0c2ac                get_version
+                0x0000000026f0c2b4                jumptable_init
+                0x0000000026f0c678                fdt_getprop_u32_default
+                0x0000000026f0c6c0                fdt_find_and_setprop
+                0x0000000026f0c730                fdt_initrd
+                0x0000000026f0c8f4                fdt_chosen
+                0x0000000026f0c9fc                do_fixup_by_path
+                0x0000000026f0ca50                do_fixup_by_path_u32
+                0x0000000026f0ca94                do_fixup_by_prop
+                0x0000000026f0cb28                do_fixup_by_prop_u32
+                0x0000000026f0cb84                do_fixup_by_compat
+                0x0000000026f0cc08                do_fixup_by_compat_u32
+                0x0000000026f0cc4c                fdt_fixup_memory_banks
+                0x0000000026f0cea4                fdt_fixup_memory
+                0x0000000026f0cec4                fdt_fixup_ethernet
+                0x0000000026f0d004                fdt_resize
+                0x0000000026f0d0dc                fdt_increase_size
+                0x0000000026f0d104                fdt_del_node_and_alias
+                0x0000000026f0d148                __of_translate_address
+                0x0000000026f0d38c                fdt_translate_address
+                0x0000000026f0d398                fdt_node_offset_by_compat_reg
+                0x0000000026f0d41c                fdt_alloc_phandle
+                0x0000000026f0d474                fdt_set_phandle
+                0x0000000026f0d4b8                fdt_create_phandle
+                0x0000000026f0d51c                fdt_set_node_status
+                0x0000000026f0d628                fdt_set_status_by_alias
+                0x0000000026f0d654                fdt_verify_alias_address
+                0x0000000026f0d720                fdt_get_base_address
+                0x0000000026f0d7f4                do_showvar
+                0x0000000026f0dd8c                get_local_var
+                0x0000000026f0de14                set_local_var
+                0x0000000026f0e284                unset_local_var
+                0x0000000026f0e328                new_pipe
+                0x0000000026f0e398                reserved_word
+                0x0000000026f0e66c                mapset
+                0x0000000026f0e694                update_ifs_map
+                0x0000000026f0e720                parse_string_outer
+                0x0000000026f0f608                parse_file_outer
+                0x0000000026f0f64c                u_boot_hush_start
+                0x0000000026f0f6ec                image_check_hcrc
+                0x0000000026f0f73c                image_check_dcrc
+                0x0000000026f0f778                image_multi_count
+                0x0000000026f0f798                image_multi_getimg
+                0x0000000026f0f820                getenv_yesno
+                0x0000000026f0f848                getenv_bootm_low
+                0x0000000026f0f878                getenv_bootm_size
+                0x0000000026f0f8d8                getenv_bootm_mapsize
+                0x0000000026f0f908                memmove_wd
+                0x0000000026f0f914                genimg_print_size
+                0x0000000026f0f944                get_table_entry_name
+                0x0000000026f0f970                genimg_get_os_name
+                0x0000000026f0f988                genimg_get_arch_name
+                0x0000000026f0f9a0                genimg_get_type_name
+                0x0000000026f0f9b8                genimg_get_comp_name
+                0x0000000026f0f9d0                image_print_contents
+                0x0000000026f0fb48                get_table_entry_id
+                0x0000000026f0fb98                genimg_get_os_id
+                0x0000000026f0fbb0                genimg_get_arch_id
+                0x0000000026f0fbc8                genimg_get_type_id
+                0x0000000026f0fbe0                genimg_get_comp_id
+                0x0000000026f0fbf8                genimg_get_format
+                0x0000000026f0fc34                genimg_get_image
+                0x0000000026f0fc38                genimg_has_config
+                0x0000000026f0fc48                boot_ramdisk_high
+                0x0000000026f0fd88                boot_fdt_add_mem_rsv_regions
+                0x0000000026f0fe10                boot_relocate_fdt
+                0x0000000026f0ffa8                fit_parse_conf
+                0x0000000026f1000c                fit_parse_subimage
+                0x0000000026f10070                fit_get_desc
+                0x0000000026f1009c                fit_get_timestamp
+                0x0000000026f100ec                fit_image_get_node
+                0x0000000026f10144                fit_image_get_os
+                0x0000000026f1017c                fit_image_get_arch
+                0x0000000026f101b4                fit_image_get_type
+                0x0000000026f101ec                fit_image_get_comp
+                0x0000000026f10224                fit_image_get_load
+                0x0000000026f10260                fit_image_get_entry
+                0x0000000026f1029c                fit_image_get_data
+                0x0000000026f102d8                fit_image_hash_get_algo
+                0x0000000026f10304                fit_image_hash_get_value
+                0x0000000026f10340                fit_image_print_hash
+                0x0000000026f10438                fit_image_print
+                0x0000000026f106ec                fit_set_timestamp
+                0x0000000026f10774                fit_image_check_hashes
+                0x0000000026f109d4                fit_all_image_check_hashes
+                0x0000000026f10ab4                fit_image_check_os
+                0x0000000026f10ae8                fit_image_check_arch
+                0x0000000026f10b1c                fit_image_check_type
+                0x0000000026f10b50                fit_image_check_comp
+                0x0000000026f10b84                fit_check_format
+                0x0000000026f10bc4                fit_conf_get_node
+                0x0000000026f10c2c                fit_conf_get_kernel_node
+                0x0000000026f10c38                fit_conf_get_ramdisk_node
+                0x0000000026f10c44                boot_get_ramdisk
+                0x0000000026f111a4                fit_conf_get_fdt_node
+                0x0000000026f111b0                boot_get_fdt
+                0x0000000026f11704                fit_conf_print
+                0x0000000026f11808                fit_print_contents
+                0x0000000026f11b40                lcd_putc
+                0x0000000026f11ca4                lcd_puts
+                0x0000000026f11ce0                lcd_printf
+                0x0000000026f11d18                lcd_setmem
+                0x0000000026f11d5c                bitmap_plot
+                0x0000000026f11e5c                lcd_clear
+                0x0000000026f11f04                drv_lcd_init
+                0x0000000026f121a4                __show_boot_progress
+                0x0000000026f121a4                show_boot_progress
+                0x0000000026f121a8                readline_into_buffer
+                0x0000000026f12b44                readline
+                0x0000000026f12b60                parse_line
+                0x0000000026f12be8                run_command
+                0x0000000026f12bf0                run_command_list
+                0x0000000026f12c4c                main_loop
+                0x0000000026f12d44                do_run
+                0x0000000026f12db8                get_ram_size
+                0x0000000026f12f34                srec_decode
+                0x0000000026f13190                stdio_get_list
+                0x0000000026f1319c                stdio_get_by_name
+                0x0000000026f131ec                stdio_clone
+                0x0000000026f13238                stdio_register
+                0x0000000026f1327c                stdio_init
+                0x0000000026f13374                usb_stop
+                0x0000000026f133a8                usb_disable_asynch
+                0x0000000026f133c8                usb_submit_int_msg
+                0x0000000026f133cc                usb_control_msg
+                0x0000000026f13668                usb_bulk_msg
+                0x0000000026f136dc                usb_maxpacket
+                0x0000000026f136f8                usb_clear_halt
+                0x0000000026f137a0                usb_get_configuration_no
+                0x0000000026f1383c                usb_set_interface
+                0x0000000026f138fc                usb_set_protocol
+                0x0000000026f13950                usb_set_idle
+                0x0000000026f139ac                usb_get_report
+                0x0000000026f13a10                usb_get_class_descriptor
+                0x0000000026f13a74                usb_string
+                0x0000000026f13b7c                usb_get_dev_index
+                0x0000000026f13ba8                usb_alloc_new_device
+                0x0000000026f13c2c                usb_new_device
+                0x0000000026f140d4                usb_init
+                0x0000000026f14360                usb_hub_reset
+                0x0000000026f14374                hub_port_reset
+                0x0000000026f14420                usb_hub_port_connect_change
+                0x0000000026f147a4                usb_hub_probe
+                0x0000000026f14a5c                usb_stor_read
+                0x0000000026f14c08                usb_stor_write
+                0x0000000026f14db4                usb_stor_get_dev
+                0x0000000026f14dd8                usb_show_progress
+                0x0000000026f14ddc                usb_stor_info
+                0x0000000026f14e4c                usb_stor_BBB_comdat
+                0x0000000026f14f30                usb_stor_CB_comdat
+                0x0000000026f1514c                usb_stor_CBI_get_status
+                0x0000000026f15214                usb_stor_CB_transport
+                0x0000000026f15438                usb_stor_BBB_clear_endpt_stall
+                0x0000000026f15484                usb_stor_BBB_transport
+                0x0000000026f15660                usb_storage_probe
+                0x0000000026f15870                usb_stor_get_info
+                0x0000000026f15b0c                usb_stor_scan
+                0x0000000026f15d0c                CYGACC_COMM_IF_GETC_TIMEOUT
+                0x0000000026f15ff8                CYGACC_COMM_IF_PUTC
+                0x0000000026f16000                parse_num
+                0x0000000026f16120                xyzModem_stream_open
+                0x0000000026f1626c                xyzModem_stream_read
+                0x0000000026f164c0                xyzModem_stream_close
+                0x0000000026f16510                xyzModem_stream_terminate
+                0x0000000026f165a4                xyzModem_error
+ .text          0x0000000026f165c4      0xcc4 disk/libdisk.o
+                0x0000000026f165c4                get_dev
+                0x0000000026f16628                dev_print
+                0x0000000026f1683c                init_part
+                0x0000000026f1685c                print_part
+                0x0000000026f16944                get_partition_info
+                0x0000000026f16970                get_device
+                0x0000000026f169f0                get_device_and_partition
+                0x0000000026f171dc                test_part_dos
+                0x0000000026f17240                print_part_dos
+                0x0000000026f1726c                get_partition_info_dos
+ .text          0x0000000026f17288      0x3cc drivers/gpio/libgpio.o
+                0x0000000026f17288                at91_set_pio_pullup
+                0x0000000026f172bc                at91_set_pio_periph
+                0x0000000026f172f0                at91_set_a_periph
+                0x0000000026f1734c                at91_set_b_periph
+                0x0000000026f173a4                at91_set_c_periph
+                0x0000000026f173fc                at91_set_d_periph
+                0x0000000026f17454                at91_set_pio_input
+                0x0000000026f17494                at91_set_pio_output
+                0x0000000026f174e4                at91_set_pio_deglitch
+                0x0000000026f17520                at91_set_pio_debounce
+                0x0000000026f17564                at91_set_pio_pulldown
+                0x0000000026f17598                at91_set_pio_disable_schmitt_trig
+                0x0000000026f175c4                at91_set_pio_multi_drive
+                0x0000000026f175f0                at91_set_pio_value
+                0x0000000026f1761c                at91_get_pio_value
+ .text          0x0000000026f17654      0x4f8 drivers/input/libinput.o
+                0x0000000026f17654                input_queue_ascii
+                0x0000000026f1769c                input_tstc
+                0x0000000026f176e4                input_getc
+                0x0000000026f17740                input_send_keycodes
+                0x0000000026f17a0c                input_add_table
+                0x0000000026f17a4c                input_init
+                0x0000000026f17af8                input_stdio_register
+ .text          0x0000000026f17b4c     0x1b48 drivers/mmc/libmmc.o
+                0x0000000026f17b54                __board_mmc_getcd
+                0x0000000026f17b54                board_mmc_getcd
+                0x0000000026f17b5c                mmc_send_cmd
+                0x0000000026f17b98                mmc_send_status
+                0x0000000026f17c64                mmc_set_blocklen
+                0x0000000026f17c94                find_mmc_device
+                0x0000000026f17fd4                mmc_read_blocks
+                0x0000000026f18134                mmc_go_idle
+                0x0000000026f18180                sd_send_op_cond
+                0x0000000026f182c4                mmc_send_op_cond
+                0x0000000026f18404                mmc_send_ext_csd
+                0x0000000026f18450                mmc_switch
+                0x0000000026f184a4                mmc_change_freq
+                0x0000000026f18554                mmc_switch_part
+                0x0000000026f18590                mmc_getcd
+                0x0000000026f185bc                sd_switch
+                0x0000000026f18620                sd_change_freq
+                0x0000000026f18814                mmc_set_ios
+                0x0000000026f18824                mmc_set_clock
+                0x0000000026f18844                mmc_set_bus_width
+                0x0000000026f1884c                mmc_startup
+                0x0000000026f18ec4                mmc_send_if_cond
+                0x0000000026f18f38                mmc_register
+                0x0000000026f18fbc                mmc_init
+                0x0000000026f19098                mmc_get_dev
+                0x0000000026f190c4                cpu_mmc_init
+                0x0000000026f190c4                board_mmc_init
+                0x0000000026f190cc                print_mmc_devices
+                0x0000000026f19130                get_mmc_num
+                0x0000000026f19140                mmc_initialize
+                0x0000000026f195dc                atmel_mci_init
+ .text          0x0000000026f19694     0x7210 drivers/mtd/nand/libnand.o
+                0x0000000026f19694                nand_register
+                0x0000000026f19714                nand_init
+                0x0000000026f1a988                nand_update_bbt
+                0x0000000026f1ac5c                nand_scan_bbt
+                0x0000000026f1b148                nand_default_bbt
+                0x0000000026f1b244                nand_isbad_bbt
+                0x0000000026f1b328                nand_erase_opts
+                0x0000000026f1b634                nand_write_skip_bad
+                0x0000000026f1b878                nand_read_skip_bad
+                0x0000000026f1ba60                nand_calculate_ecc
+                0x0000000026f1bb54                nand_correct_data
+                0x0000000026f1bc90                nand_read_byte
+                0x0000000026f1bcd0                nand_write_buf
+                0x0000000026f1bcfc                nand_read_buf
+                0x0000000026f1bd6c                nand_write_buf16
+                0x0000000026f1bda0                nand_read_buf16
+                0x0000000026f1dc58                nand_wait_ready
+                0x0000000026f1e7a4                nand_erase_nand
+                0x0000000026f1eb5c                nand_scan_ident
+                0x0000000026f1f32c                nand_scan_tail
+                0x0000000026f1f8cc                nand_scan
+                0x0000000026f1f8f0                nand_release
+                0x0000000026f2049c                atmel_nand_chip_init
+                0x0000000026f20878                board_nand_init
+ .text          0x0000000026f208a4     0x10a8 drivers/mtd/spi/libspi_flash.o
+                0x0000000026f20918                spi_flash_cmd_read
+                0x0000000026f20934                spi_flash_cmd
+                0x0000000026f20960                spi_flash_cmd_write
+                0x0000000026f2097c                spi_flash_read_common
+                0x0000000026f209c8                spi_flash_cmd_read_fast
+                0x0000000026f20a08                spi_flash_cmd_poll_bit
+                0x0000000026f20ad0                spi_flash_cmd_wait_ready
+                0x0000000026f20adc                spi_flash_cmd_write_multi
+                0x0000000026f20be4                spi_flash_cmd_erase
+                0x0000000026f20ce0                spi_flash_cmd_write_status
+                0x0000000026f20d48                spi_flash_probe
+                0x0000000026f20e30                spi_flash_free
+                0x0000000026f2116c                dataflash_erase_at45
+                0x0000000026f2127c                dataflash_erase_p2
+                0x0000000026f21524                dataflash_erase_block_at25
+                0x0000000026f2159c                dataflash_erase_at25
+                0x0000000026f216c4                dataflash_write_at25
+                0x0000000026f217b8                spi_flash_probe_atmel
+ .text          0x0000000026f2194c     0x1030 drivers/net/libnet.o
+                0x0000000026f2207c                gmacb_eth_initialize
+                0x0000000026f22850                macb_eth_initialize
+ .text          0x0000000026f2297c        0x0 drivers/pcmcia/libpcmcia.o
+ .text          0x0000000026f2297c        0x0 drivers/rtc/librtc.o
+ .text          0x0000000026f2297c       0xf4 drivers/serial/libserial.o
+                0x0000000026f2297c                serial_setbrg
+                0x0000000026f229a8                serial_init
+                0x0000000026f229f0                serial_putc
+                0x0000000026f22a24                serial_puts
+                0x0000000026f22a44                serial_getc
+                0x0000000026f22a60                serial_tstc
+ .text          0x0000000026f22a70      0x1f4 drivers/spi/libspi.o
+                0x0000000026f22a70                spi_init
+                0x0000000026f22a74                spi_setup_slave
+                0x0000000026f22b54                spi_free_slave
+                0x0000000026f22b58                spi_claim_bus
+                0x0000000026f22b78                spi_release_bus
+                0x0000000026f22b88                spi_xfer
+ .text          0x0000000026f22c64     0x17b8 drivers/usb/host/libusb_host.o
+                0x0000000026f23078                sohci_submit_job
+                0x0000000026f2359c                rh_check_port_status
+                0x0000000026f235ec                submit_common_msg
+                0x0000000026f23c64                submit_bulk_msg
+                0x0000000026f23c7c                submit_control_msg
+                0x0000000026f241f0                submit_int_msg
+                0x0000000026f2420c                usb_lowlevel_init
+                0x0000000026f24370                usb_lowlevel_stop
+                0x0000000026f243a0                usb_cpu_init
+                0x0000000026f243e8                usb_cpu_stop
+                0x0000000026f24418                usb_cpu_init_fail
+ .text          0x0000000026f2441c      0x2d0 drivers/video/libvideo.o
+                0x0000000026f2441c                lcd_ctrl_init
+ .text          0x0000000026f246ec     0x19bc fs/fat/libfat.o
+                0x0000000026f24ec0                fat_register_device
+                0x0000000026f2502c                do_fat_read_at
+                0x0000000026f25b6c                do_fat_read
+                0x0000000026f25b90                file_fat_detectfs
+                0x0000000026f25ce8                file_fat_ls
+                0x0000000026f25cf8                file_fat_read_at
+                0x0000000026f25d3c                file_fat_read
+                0x0000000026f25d50                file_getfsname
+                0x0000000026f25d68                file_cd
+                0x0000000026f25f54                file_detectfs
+                0x0000000026f25f90                file_ls
+                0x0000000026f26014                file_read
+ .text          0x0000000026f260a8     0x206c lib/libfdt/libfdt.o
+                0x0000000026f260b0                fdt_check_header
+                0x0000000026f26130                fdt_offset_ptr
+                0x0000000026f2618c                fdt_next_tag
+                0x0000000026f26288                _fdt_check_node_offset
+                0x0000000026f262c0                _fdt_check_prop_offset
+                0x0000000026f262f8                fdt_next_node
+                0x0000000026f263b8                _fdt_find_string
+                0x0000000026f26410                fdt_move
+                0x0000000026f26528                fdt_string
+                0x0000000026f26548                fdt_get_mem_rsv
+                0x0000000026f265a0                fdt_num_mem_rsv
+                0x0000000026f265d8                fdt_subnode_offset_namelen
+                0x0000000026f266a4                fdt_subnode_offset
+                0x0000000026f266d4                fdt_get_name
+                0x0000000026f2673c                fdt_first_property_offset
+                0x0000000026f2675c                fdt_next_property_offset
+                0x0000000026f2677c                fdt_get_property_by_offset
+                0x0000000026f267dc                fdt_get_property_namelen
+                0x0000000026f2688c                fdt_get_property
+                0x0000000026f268c4                fdt_getprop_namelen
+                0x0000000026f268e0                fdt_getprop_by_offset
+                0x0000000026f2692c                fdt_getprop
+                0x0000000026f26964                fdt_get_phandle
+                0x0000000026f269dc                fdt_get_alias_namelen
+                0x0000000026f26a24                fdt_path_offset
+                0x0000000026f26b08                fdt_get_alias
+                0x0000000026f26b30                fdt_get_path
+                0x0000000026f26c68                fdt_supernode_atdepth_offset
+                0x0000000026f26d20                fdt_node_depth
+                0x0000000026f26d44                fdt_parent_offset
+                0x0000000026f26d74                fdt_node_offset_by_prop_value
+                0x0000000026f26e10                fdt_node_offset_by_phandle
+                0x0000000026f26e84                fdt_node_check_compatible
+                0x0000000026f26f10                fdt_node_offset_by_compatible
+                0x0000000026f27370                fdt_add_mem_rsv
+                0x0000000026f273e4                fdt_del_mem_rsv
+                0x0000000026f2743c                fdt_set_name
+                0x0000000026f274c0                fdt_setprop
+                0x0000000026f2767c                fdt_delprop
+                0x0000000026f276e0                fdt_add_subnode_namelen
+                0x0000000026f277d4                fdt_add_subnode
+                0x0000000026f27804                fdt_del_node
+                0x0000000026f2785c                fdt_open_into
+                0x0000000026f27a08                fdt_pack
+                0x0000000026f27a64                fdt_strerror
+                0x0000000026f27bf0                fdt_create
+                0x0000000026f27c68                fdt_add_reservemap_entry
+                0x0000000026f27cf8                fdt_finish_reservemap
+                0x0000000026f27d10                fdt_begin_node
+                0x0000000026f27d78                fdt_end_node
+                0x0000000026f27db0                fdt_property
+                0x0000000026f27ee4                fdt_finish
+                0x0000000026f28004                fdt_setprop_inplace
+                0x0000000026f28048                fdt_nop_property
+                0x0000000026f28084                _fdt_node_end_offset
+                0x0000000026f280c4                fdt_nop_node
+ .text          0x0000000026f28114     0x5670 lib/libgeneric.o
+                0x0000000026f28114                cyg_crc16
+                0x0000000026f28158                crc32_no_comp
+                0x0000000026f28238                crc32
+                0x0000000026f2824c                crc32_wd
+                0x0000000026f28250                crc7
+                0x0000000026f28278                display_options
+                0x0000000026f28298                print_size
+                0x0000000026f283d0                print_buffer
+                0x0000000026f28550                __div64_32
+                0x0000000026f2862c                gzfree
+                0x0000000026f28634                gzalloc
+                0x0000000026f28644                zunzip
+                0x0000000026f28750                gunzip
+                0x0000000026f28860                hcreate_r
+                0x0000000026f28914                hdestroy_r
+                0x0000000026f289b4                hstrstr_r
+                0x0000000026f28a60                hmatch_r
+                0x0000000026f28b00                hsearch_r
+                0x0000000026f28df0                hdelete_r
+                0x0000000026f28ea4                hexport_r
+                0x0000000026f2913c                himport_r
+                0x0000000026f294d8                ldiv
+                0x0000000026f296f8                lmb_dump_all
+                0x0000000026f296fc                lmb_init
+                0x0000000026f29724                lmb_add
+                0x0000000026f29728                lmb_free
+                0x0000000026f29834                lmb_reserve
+                0x0000000026f2983c                lmb_overlaps_region
+                0x0000000026f2989c                __lmb_alloc_base
+                0x0000000026f299ac                lmb_alloc_base
+                0x0000000026f299e0                lmb_alloc
+                0x0000000026f299e8                lmb_is_reserved
+                0x0000000026f29a38                board_lmb_reserve
+                0x0000000026f29a38                __board_lmb_reserve
+                0x0000000026f29a3c                __arch_lmb_reserve
+                0x0000000026f2a61c                md5
+                0x0000000026f2a684                md5_wd
+                0x0000000026f2a6ec                string_to_ip
+                0x0000000026f2a74c                qsort
+                0x0000000026f2a82c                strcmp_compar
+                0x0000000026f2bd68                sha1_starts
+                0x0000000026f2bdb4                sha1_update
+                0x0000000026f2be6c                sha1_finish
+                0x0000000026f2bfac                sha1_csum
+                0x0000000026f2bfec                sha1_csum_wd
+                0x0000000026f2c02c                sha1_hmac
+                0x0000000026f2c154                sha1_self_test
+                0x0000000026f2c15c                strcpy
+                0x0000000026f2c178                strncpy
+                0x0000000026f2c19c                strcat
+                0x0000000026f2c1cc                strncat
+                0x0000000026f2c220                strcmp
+                0x0000000026f2c24c                strncmp
+                0x0000000026f2c28c                strchr
+                0x0000000026f2c2c0                skip_spaces
+                0x0000000026f2c2e8                strlen
+                0x0000000026f2c308                strim
+                0x0000000026f2c368                strrchr
+                0x0000000026f2c3a4                strnlen
+                0x0000000026f2c3d4                strdup
+                0x0000000026f2c40c                strspn
+                0x0000000026f2c454                strpbrk
+                0x0000000026f2c490                strtok
+                0x0000000026f2c514                strsep
+                0x0000000026f2c548                strswab
+                0x0000000026f2c594                memset
+                0x0000000026f2c600                bcopy
+                0x0000000026f2c624                memcpy
+                0x0000000026f2c68c                memmove
+                0x0000000026f2c6ec                memcmp
+                0x0000000026f2c720                memscan
+                0x0000000026f2c744                strstr
+                0x0000000026f2c7a8                memchr
+                0x0000000026f2c7d8                strmhz
+                0x0000000026f2c844                udelay
+                0x0000000026f2c874                mdelay
+                0x0000000026f2d3f0                simple_strtoul
+                0x0000000026f2d4b0                strict_strtoul
+                0x0000000026f2d528                simple_strtol
+                0x0000000026f2d550                ustrtoul
+                0x0000000026f2d5c0                simple_strtoull
+                0x0000000026f2d6ac                vsprintf
+                0x0000000026f2d6b0                sprintf
+                0x0000000026f2d6d4                panic
+                0x0000000026f2d718                __assert_fail
+                0x0000000026f2d72c                simple_itoa
+ .text          0x0000000026f2d784     0x26c8 lib/zlib/libz.o
+                0x0000000026f2d784                zcfree
+                0x0000000026f2d78c                zcalloc
+                0x0000000026f2d794                inflate_fast
+                0x0000000026f2dd3c                inflate_table
+                0x0000000026f2e2f0                inflateReset
+                0x0000000026f2e36c                inflateInit2_
+                0x0000000026f2e470                inflateInit_
+                0x0000000026f2e484                inflateEnd
+                0x0000000026f2e4e8                adler32
+                0x0000000026f2e824                inflate
+ .text          0x0000000026f2fe4c     0x3cb8 net/libnet.o
+                0x0000000026f2fe4c                ArpInit
+                0x0000000026f2fe78                arp_raw_request
+                0x0000000026f2ff38                ArpRequest
+                0x0000000026f2ffb0                ArpTimeoutCheck
+                0x0000000026f30020                ArpReceive
+                0x0000000026f308ac                BootpRequest
+                0x0000000026f30b54                DhcpRequest
+                0x0000000026f30ba0                cpu_eth_init
+                0x0000000026f30c08                eth_parse_enetaddr
+                0x0000000026f30c5c                eth_getenv_enetaddr
+                0x0000000026f30c7c                eth_setenv_enetaddr
+                0x0000000026f30cb0                eth_getenv_enetaddr_by_index
+                0x0000000026f30d00                eth_get_dev_by_name
+                0x0000000026f30d88                eth_get_dev_by_index
+                0x0000000026f30dc0                eth_get_dev_index
+                0x0000000026f30ddc                eth_write_hwaddr
+                0x0000000026f30f58                eth_register
+                0x0000000026f30fc4                eth_unregister
+                0x0000000026f31060                eth_initialize
+                0x0000000026f31220                eth_halt
+                0x0000000026f31250                eth_send
+                0x0000000026f31288                eth_rx
+                0x0000000026f312b4                eth_try_another
+                0x0000000026f31334                eth_init
+                0x0000000026f313fc                eth_set_current
+                0x0000000026f31490                eth_get_name
+                0x0000000026f314fc                net_auto_load
+                0x0000000026f3155c                NetStartAgain
+                0x0000000026f3167c                net_get_udp_handler
+                0x0000000026f3168c                net_set_udp_handler
+                0x0000000026f316ac                net_get_arp_handler
+                0x0000000026f316bc                net_set_arp_handler
+                0x0000000026f316dc                NetSetTimeout
+                0x0000000026f31718                NetCksum
+                0x0000000026f31750                NetCksumOk
+                0x0000000026f31770                NetReceive
+                0x0000000026f319d8                NetEthHdrSize
+                0x0000000026f31a10                NetSetEther
+                0x0000000026f31aac                net_update_ether
+                0x0000000026f31b24                net_set_ip_header
+                0x0000000026f31bac                net_set_udp_header
+                0x0000000026f31c34                NetSendUDPPacket
+                0x0000000026f31d40                copy_filename
+                0x0000000026f31d8c                random_port
+                0x0000000026f31da4                ip_to_string
+                0x0000000026f31dd8                VLAN_to_string
+                0x0000000026f31e1c                string_to_VLAN
+                0x0000000026f31e64                getenv_VLAN
+                0x0000000026f31f24                net_init
+                0x0000000026f31f90                NetLoop
+                0x0000000026f32ee4                NfsStart
+                0x0000000026f33134                ping_start
+                0x0000000026f33250                ping_receive
+                0x0000000026f3381c                TftpStart
+ .text          0x0000000026f33b04      0x260 board/sdsIndustries/controller/libcontroller.o
+                0x0000000026f33b04                sama5d3xek_nand_hw_init
+                0x0000000026f33b54                lcd_enable
+                0x0000000026f33b64                lcd_disable
+                0x0000000026f33b74                lcd_show_board_info
+                0x0000000026f33c10                board_early_init_f
+                0x0000000026f33c20                board_init
+                0x0000000026f33cb8                dram_init
+                0x0000000026f33cd8                reset_phy
+                0x0000000026f33cdc                board_eth_init
+                0x0000000026f33d30                spi_cs_is_valid
+                0x0000000026f33d44                spi_cs_activate
+                0x0000000026f33d54                spi_cs_deactivate
+ .text          0x0000000026f33d64       0x24 /home/scott/controller/tap-uboot/arch/arm/lib/eabi_compat.o
+                0x0000000026f33d64                raise
+                0x0000000026f33d80                __aeabi_unwind_cpp_pr0
+                0x0000000026f33d84                __aeabi_unwind_cpp_pr1
+ .text          0x0000000026f33d88      0x20c /usr/lib/gcc-cross/arm-linux-gnueabi/4.7/libgcc.a(_udivsi3.o)
+                0x0000000026f33d88                __udivsi3
+                0x0000000026f33d88                __aeabi_uidiv
+                0x0000000026f33f74                __aeabi_uidivmod
+ .text          0x0000000026f33f94      0x240 /usr/lib/gcc-cross/arm-linux-gnueabi/4.7/libgcc.a(_divsi3.o)
+                0x0000000026f33f94                __aeabi_idiv
+                0x0000000026f33f94                __divsi3
+                0x0000000026f341b4                __aeabi_idivmod
+ .text          0x0000000026f341d4       0x1c /usr/lib/gcc-cross/arm-linux-gnueabi/4.7/libgcc.a(_lshrdi3.o)
+                0x0000000026f341d4                __aeabi_llsr
+                0x0000000026f341d4                __lshrdi3
+ .text          0x0000000026f341f0       0x1c /usr/lib/gcc-cross/arm-linux-gnueabi/4.7/libgcc.a(_ashrdi3.o)
+                0x0000000026f341f0                __ashrdi3
+                0x0000000026f341f0                __aeabi_lasr
+ .text          0x0000000026f3420c       0x1c /usr/lib/gcc-cross/arm-linux-gnueabi/4.7/libgcc.a(_ashldi3.o)
+                0x0000000026f3420c                __ashldi3
+                0x0000000026f3420c                __aeabi_llsl
+ .text          0x0000000026f34228       0x10 /usr/lib/gcc-cross/arm-linux-gnueabi/4.7/libgcc.a(_dvmd_lnx.o)
+                0x0000000026f34228                __aeabi_ldiv0
+                0x0000000026f34228                __aeabi_idiv0
 
-.glue_7         0x0000000026f348ec        0x0
+.glue_7         0x0000000026f34238        0x0
  .glue_7        0x0000000000000000        0x0 linker stubs
 
-.glue_7t        0x0000000026f348ec        0x0
+.glue_7t        0x0000000026f34238        0x0
  .glue_7t       0x0000000000000000        0x0 linker stubs
 
-.vfp11_veneer   0x0000000026f348ec        0x0
+.vfp11_veneer   0x0000000026f34238        0x0
  .vfp11_veneer  0x0000000000000000        0x0 linker stubs
 
-.v4_bx          0x0000000026f348ec        0x0
+.v4_bx          0x0000000026f34238        0x0
  .v4_bx         0x0000000000000000        0x0 linker stubs
 
-.iplt           0x0000000026f348ec        0x0
+.iplt           0x0000000026f34238        0x0
  .iplt          0x0000000000000000        0x0 arch/arm/cpu/armv7/start.o
-                0x0000000026f348ec                . = ALIGN (0x4)
+                0x0000000026f34238                . = ALIGN (0x4)
 
-.rodata         0x0000000026f348ec     0xd1f8
+.rodata         0x0000000026f34238     0xcecf
  *(SORT(.rodata*))
- .rodata        0x0000000026f348ec       0x80 arch/arm/lib/libarm.o
- .rodata        0x0000000026f3496c     0x15bc common/libcommon.o
-                0x0000000026f34a60                version_string
-                0x0000000026f34aad                default_environment
- .rodata        0x0000000026f35f28       0x18 disk/libdisk.o
- .rodata        0x0000000026f35f40       0x55 drivers/mmc/libmmc.o
- *fill*         0x0000000026f35f95        0x3 
- .rodata        0x0000000026f35f98      0x8d0 drivers/mtd/nand/libnand.o
-                0x0000000026f35fb4                nand_manuf_ids
-                0x0000000026f36004                nand_flash_ids
- .rodata        0x0000000026f36868       0x60 drivers/mtd/spi/libspi_flash.o
- .rodata        0x0000000026f368c8       0x80 drivers/usb/host/libusb_host.o
- .rodata        0x0000000026f36948       0x18 fs/fat/libfat.o
- .rodata        0x0000000026f36960       0x34 lib/libfdt/libfdt.o
- .rodata        0x0000000026f36994      0x867 lib/libgeneric.o
-                0x0000000026f36f94                crc7_syndrome_table
-                0x0000000026f37094                _ctype
-                0x0000000026f371ea                hex_asc
- *fill*         0x0000000026f371fb        0x1 
- .rodata        0x0000000026f371fc      0x9cc lib/zlib/libz.o
-                0x0000000026f37ba0                z_errmsg
- .rodata        0x0000000026f37bc8       0x16 arch/arm/cpu/armv7/libarmv7.o
- .rodata        0x0000000026f37bde       0x70 drivers/input/libinput.o
- .rodata        0x0000000026f37c4e        0xe drivers/video/libvideo.o
- .rodata        0x0000000026f37c5c       0x22 net/libnet.o
+ .rodata        0x0000000026f34238       0x80 arch/arm/lib/libarm.o
+ .rodata        0x0000000026f342b8     0x15bc common/libcommon.o
+                0x0000000026f343ac                version_string
+                0x0000000026f343f9                default_environment
+ .rodata        0x0000000026f35874       0x10 disk/libdisk.o
+ .rodata        0x0000000026f35884       0x55 drivers/mmc/libmmc.o
+ *fill*         0x0000000026f358d9        0x3 
+ .rodata        0x0000000026f358dc      0x8d0 drivers/mtd/nand/libnand.o
+                0x0000000026f358f8                nand_manuf_ids
+                0x0000000026f35948                nand_flash_ids
+ .rodata        0x0000000026f361ac       0x60 drivers/mtd/spi/libspi_flash.o
+ .rodata        0x0000000026f3620c       0x80 drivers/usb/host/libusb_host.o
+ .rodata        0x0000000026f3628c       0x18 fs/fat/libfat.o
+ .rodata        0x0000000026f362a4       0x34 lib/libfdt/libfdt.o
+ .rodata        0x0000000026f362d8      0x867 lib/libgeneric.o
+                0x0000000026f368d8                crc7_syndrome_table
+                0x0000000026f369d8                _ctype
+                0x0000000026f36b2e                hex_asc
+ *fill*         0x0000000026f36b3f        0x1 
+ .rodata        0x0000000026f36b40      0x9cc lib/zlib/libz.o
+                0x0000000026f374e4                z_errmsg
+ .rodata        0x0000000026f3750c       0x16 arch/arm/cpu/armv7/libarmv7.o
+ .rodata        0x0000000026f37522       0x70 drivers/input/libinput.o
+ .rodata        0x0000000026f37592        0xe drivers/video/libvideo.o
+ .rodata        0x0000000026f375a0       0x22 net/libnet.o
  .rodata.str1.1
-                0x0000000026f37c7e       0x92 arch/arm/cpu/armv7/at91/libat91.o
+                0x0000000026f375c2       0x92 arch/arm/cpu/armv7/at91/libat91.o
  .rodata.str1.1
-                0x0000000026f37d10       0x65 arch/arm/cpu/armv7/libarmv7.o
+                0x0000000026f37654       0x65 arch/arm/cpu/armv7/libarmv7.o
  .rodata.str1.1
-                0x0000000026f37d75      0x3b3 arch/arm/lib/libarm.o
-                                        0x3cc (size before relaxing)
+                0x0000000026f376b9      0x3ab arch/arm/lib/libarm.o
+                                        0x3c4 (size before relaxing)
  .rodata.str1.1
-                0x0000000026f38128     0x6be0 common/libcommon.o
-                                       0x71f8 (size before relaxing)
+                0x0000000026f37a64     0x68c3 common/libcommon.o
+                                       0x6eb3 (size before relaxing)
  .rodata.str1.1
-                0x0000000026f3ed08      0x3da disk/libdisk.o
-                                        0x418 (size before relaxing)
+                0x0000000026f3e327      0x3de disk/libdisk.o
+                                        0x414 (size before relaxing)
  .rodata.str1.1
                 0x0000000000000000        0x6 drivers/input/libinput.o
  .rodata.str1.1
-                0x0000000026f3f0e2      0x257 drivers/mmc/libmmc.o
+                0x0000000026f3e705      0x257 drivers/mmc/libmmc.o
                                         0x263 (size before relaxing)
  .rodata.str1.1
-                0x0000000026f3f339      0xe85 drivers/mtd/nand/libnand.o
+                0x0000000026f3e95c      0xe85 drivers/mtd/nand/libnand.o
                                         0xee1 (size before relaxing)
  .rodata.str1.1
-                0x0000000026f401be       0xbf drivers/mtd/spi/libspi_flash.o
+                0x0000000026f3f7e1       0xbf drivers/mtd/spi/libspi_flash.o
                                          0xc1 (size before relaxing)
  .rodata.str1.1
-                0x0000000026f4027d      0x1c6 drivers/net/libnet.o
+                0x0000000026f3f8a0      0x1c6 drivers/net/libnet.o
                                         0x312 (size before relaxing)
  .rodata.str1.1
-                0x0000000026f40443      0x7dd drivers/usb/host/libusb_host.o
+                0x0000000026f3fa66      0x7dd drivers/usb/host/libusb_host.o
  .rodata.str1.1
-                0x0000000026f40c20        0xf drivers/video/libvideo.o
+                0x0000000026f40243        0xf drivers/video/libvideo.o
                                          0x31 (size before relaxing)
  .rodata.str1.1
-                0x0000000026f40c2f      0x1cf fs/fat/libfat.o
+                0x0000000026f40252      0x1cf fs/fat/libfat.o
                                         0x204 (size before relaxing)
  .rodata.str1.1
-                0x0000000026f40dfe       0xfc lib/libfdt/libfdt.o
+                0x0000000026f40421       0xfc lib/libfdt/libfdt.o
                                         0x11b (size before relaxing)
  .rodata.str1.1
-                0x0000000026f40efa      0x1dd lib/libgeneric.o
+                0x0000000026f4051d      0x1dd lib/libgeneric.o
                                         0x1f7 (size before relaxing)
  .rodata.str1.1
-                0x0000000026f410d7      0x21c lib/zlib/libz.o
+                0x0000000026f406fa      0x21c lib/zlib/libz.o
                                         0x21d (size before relaxing)
  .rodata.str1.1
-                0x0000000026f412f3      0x754 net/libnet.o
+                0x0000000026f40916      0x754 net/libnet.o
                                         0x8ec (size before relaxing)
  .rodata.str1.1
-                0x0000000026f41a47       0x82 board/sdsIndustries/controller/libcontroller.o
+                0x0000000026f4106a       0x82 board/sdsIndustries/controller/libcontroller.o
                                          0x86 (size before relaxing)
  .rodata.str1.1
-                0x0000000026f41ac9       0x1b /home/scott/controller/tap-uboot/arch/arm/lib/eabi_compat.o
+                0x0000000026f410ec       0x1b /home/scott/controller/tap-uboot/arch/arm/lib/eabi_compat.o
 
-.hash           0x0000000026f41ae4       0x48
- .hash          0x0000000026f41ae4       0x48 arch/arm/cpu/armv7/start.o
-                0x0000000026f41b2c                . = ALIGN (0x4)
+.hash           0x0000000026f41108       0x48
+ .hash          0x0000000026f41108       0x48 arch/arm/cpu/armv7/start.o
+                0x0000000026f41150                . = ALIGN (0x4)
 
-.data           0x0000000026f41b2c     0x50b4
+.data           0x0000000026f41150     0x50b0
  *(.data)
- .data          0x0000000026f41b2c        0x0 arch/arm/cpu/armv7/start.o
- .data          0x0000000026f41b2c        0x0 arch/arm/cpu/armv7/at91/libat91.o
- .data          0x0000000026f41b2c        0x0 arch/arm/cpu/armv7/libarmv7.o
- .data          0x0000000026f41b2c       0x2c arch/arm/lib/libarm.o
-                0x0000000026f41b2c                init_sequence
- .data          0x0000000026f41b58     0x4324 common/libcommon.o
-                0x0000000026f41d64                load_addr
-                0x0000000026f42180                env_htab
-                0x0000000026f42190                env_name_spec
-                0x0000000026f4222c                bmp_logo_palette
-                0x0000000026f4226a                bmp_logo_bitmap
-                0x0000000026f45e70                stdio_names
- .data          0x0000000026f45e7c        0x0 disk/libdisk.o
- .data          0x0000000026f45e7c        0x0 drivers/gpio/libgpio.o
- .data          0x0000000026f45e7c       0xc6 drivers/input/libinput.o
- *fill*         0x0000000026f45f42        0x2 
- .data          0x0000000026f45f44        0x4 drivers/mmc/libmmc.o
- .data          0x0000000026f45f48      0x9e8 drivers/mtd/nand/libnand.o
-                0x0000000026f45f48                nand_curr_device
- .data          0x0000000026f46930        0x0 drivers/mtd/spi/libspi_flash.o
- .data          0x0000000026f46930        0x0 drivers/net/libnet.o
- .data          0x0000000026f46930        0x0 drivers/pcmcia/libpcmcia.o
- .data          0x0000000026f46930        0x0 drivers/rtc/librtc.o
- .data          0x0000000026f46930        0x0 drivers/serial/libserial.o
- .data          0x0000000026f46930        0x0 drivers/spi/libspi.o
- .data          0x0000000026f46930       0x4b drivers/usb/host/libusb_host.o
- .data          0x0000000026f4697b        0x0 drivers/video/libvideo.o
- *fill*         0x0000000026f4697b        0x1 
- .data          0x0000000026f4697c      0x204 fs/fat/libfat.o
-                0x0000000026f4697c                file_cwd
- .data          0x0000000026f46b80        0x0 lib/libfdt/libfdt.o
- .data          0x0000000026f46b80        0x0 lib/libgeneric.o
- .data          0x0000000026f46b80        0x0 lib/zlib/libz.o
- .data          0x0000000026f46b80       0x28 net/libnet.o
-                0x0000000026f46b80                NetOurVLAN
-                0x0000000026f46b82                NetOurNativeVLAN
-                0x0000000026f46b84                NetBcastAddr
-                0x0000000026f46ba0                TftpRRQTimeoutCountMax
-                0x0000000026f46ba4                TftpRRQTimeoutMSecs
- .data          0x0000000026f46ba8       0x38 board/sdsIndustries/controller/libcontroller.o
-                0x0000000026f46ba8                panel_info
- .data          0x0000000026f46be0        0x0 /home/scott/controller/tap-uboot/arch/arm/lib/eabi_compat.o
- .data          0x0000000026f46be0        0x0 /usr/lib/gcc-cross/arm-linux-gnueabi/4.7/libgcc.a(_udivsi3.o)
- .data          0x0000000026f46be0        0x0 /usr/lib/gcc-cross/arm-linux-gnueabi/4.7/libgcc.a(_divsi3.o)
- .data          0x0000000026f46be0        0x0 /usr/lib/gcc-cross/arm-linux-gnueabi/4.7/libgcc.a(_lshrdi3.o)
- .data          0x0000000026f46be0        0x0 /usr/lib/gcc-cross/arm-linux-gnueabi/4.7/libgcc.a(_ashrdi3.o)
- .data          0x0000000026f46be0        0x0 /usr/lib/gcc-cross/arm-linux-gnueabi/4.7/libgcc.a(_ashldi3.o)
- .data          0x0000000026f46be0        0x0 /usr/lib/gcc-cross/arm-linux-gnueabi/4.7/libgcc.a(_dvmd_lnx.o)
+ .data          0x0000000026f41150        0x0 arch/arm/cpu/armv7/start.o
+ .data          0x0000000026f41150        0x0 arch/arm/cpu/armv7/at91/libat91.o
+ .data          0x0000000026f41150        0x0 arch/arm/cpu/armv7/libarmv7.o
+ .data          0x0000000026f41150       0x2c arch/arm/lib/libarm.o
+                0x0000000026f41150                init_sequence
+ .data          0x0000000026f4117c     0x4320 common/libcommon.o
+                0x0000000026f41384                load_addr
+                0x0000000026f417a0                env_htab
+                0x0000000026f417b0                env_name_spec
+                0x0000000026f4184c                bmp_logo_palette
+                0x0000000026f4188a                bmp_logo_bitmap
+                0x0000000026f45490                stdio_names
+ .data          0x0000000026f4549c        0x0 disk/libdisk.o
+ .data          0x0000000026f4549c        0x0 drivers/gpio/libgpio.o
+ .data          0x0000000026f4549c       0xc6 drivers/input/libinput.o
+ *fill*         0x0000000026f45562        0x2 
+ .data          0x0000000026f45564        0x4 drivers/mmc/libmmc.o
+ .data          0x0000000026f45568      0x9e8 drivers/mtd/nand/libnand.o
+                0x0000000026f45568                nand_curr_device
+ .data          0x0000000026f45f50        0x0 drivers/mtd/spi/libspi_flash.o
+ .data          0x0000000026f45f50        0x0 drivers/net/libnet.o
+ .data          0x0000000026f45f50        0x0 drivers/pcmcia/libpcmcia.o
+ .data          0x0000000026f45f50        0x0 drivers/rtc/librtc.o
+ .data          0x0000000026f45f50        0x0 drivers/serial/libserial.o
+ .data          0x0000000026f45f50        0x0 drivers/spi/libspi.o
+ .data          0x0000000026f45f50       0x4b drivers/usb/host/libusb_host.o
+ .data          0x0000000026f45f9b        0x0 drivers/video/libvideo.o
+ *fill*         0x0000000026f45f9b        0x1 
+ .data          0x0000000026f45f9c      0x204 fs/fat/libfat.o
+                0x0000000026f45f9c                file_cwd
+ .data          0x0000000026f461a0        0x0 lib/libfdt/libfdt.o
+ .data          0x0000000026f461a0        0x0 lib/libgeneric.o
+ .data          0x0000000026f461a0        0x0 lib/zlib/libz.o
+ .data          0x0000000026f461a0       0x28 net/libnet.o
+                0x0000000026f461a0                NetOurVLAN
+                0x0000000026f461a2                NetOurNativeVLAN
+                0x0000000026f461a4                NetBcastAddr
+                0x0000000026f461c0                TftpRRQTimeoutCountMax
+                0x0000000026f461c4                TftpRRQTimeoutMSecs
+ .data          0x0000000026f461c8       0x38 board/sdsIndustries/controller/libcontroller.o
+                0x0000000026f461c8                panel_info
+ .data          0x0000000026f46200        0x0 /home/scott/controller/tap-uboot/arch/arm/lib/eabi_compat.o
+ .data          0x0000000026f46200        0x0 /usr/lib/gcc-cross/arm-linux-gnueabi/4.7/libgcc.a(_udivsi3.o)
+ .data          0x0000000026f46200        0x0 /usr/lib/gcc-cross/arm-linux-gnueabi/4.7/libgcc.a(_divsi3.o)
+ .data          0x0000000026f46200        0x0 /usr/lib/gcc-cross/arm-linux-gnueabi/4.7/libgcc.a(_lshrdi3.o)
+ .data          0x0000000026f46200        0x0 /usr/lib/gcc-cross/arm-linux-gnueabi/4.7/libgcc.a(_ashrdi3.o)
+ .data          0x0000000026f46200        0x0 /usr/lib/gcc-cross/arm-linux-gnueabi/4.7/libgcc.a(_ashldi3.o)
+ .data          0x0000000026f46200        0x0 /usr/lib/gcc-cross/arm-linux-gnueabi/4.7/libgcc.a(_dvmd_lnx.o)
 
-.got            0x0000000026f46be0        0x0
+.got            0x0000000026f46200        0x0
  .got           0x0000000000000000        0x0 arch/arm/cpu/armv7/start.o
 
-.got.plt        0x0000000026f46be0        0xc
- .got.plt       0x0000000026f46be0        0xc arch/arm/cpu/armv7/start.o
-                0x0000000026f46be0                _GLOBAL_OFFSET_TABLE_
+.got.plt        0x0000000026f46200        0xc
+ .got.plt       0x0000000026f46200        0xc arch/arm/cpu/armv7/start.o
+                0x0000000026f46200                _GLOBAL_OFFSET_TABLE_
 
-.igot.plt       0x0000000026f46bec        0x0
+.igot.plt       0x0000000026f4620c        0x0
  .igot.plt      0x0000000000000000        0x0 arch/arm/cpu/armv7/start.o
-                0x0000000026f46bec                . = ALIGN (0x4)
-                0x0000000026f46bec                . = .
-                0x0000000026f46bec                __u_boot_cmd_start = .
+                0x0000000026f4620c                . = ALIGN (0x4)
+                0x0000000026f4620c                . = .
+                0x0000000026f4620c                __u_boot_cmd_start = .
 
-.u_boot_cmd     0x0000000026f46bec      0x658
+.u_boot_cmd     0x0000000026f4620c      0x620
  *(.u_boot_cmd)
- .u_boot_cmd    0x0000000026f46bec      0x658 common/libcommon.o
-                0x0000000026f46bec                __u_boot_cmd_reset
-                0x0000000026f46c08                __u_boot_cmd_go
-                0x0000000026f46c24                __u_boot_cmd_bootz
-                0x0000000026f46c40                __u_boot_cmd_bootd
-                0x0000000026f46c5c                __u_boot_cmd_boot
-                0x0000000026f46c78                __u_boot_cmd_bootm
-                0x0000000026f46c94                __u_boot_cmd_coninfo
-                0x0000000026f46cb0                __u_boot_cmd_echo
-                0x0000000026f46ccc                __u_boot_cmd_exit
-                0x0000000026f46ce8                __u_boot_cmd_fatinfo
-                0x0000000026f46d04                __u_boot_cmd_fatls
-                0x0000000026f46d20                __u_boot_cmd_fatload
-                0x0000000026f46d3c                __u_boot_cmd_fdt
-                0x0000000026f46d58                __u_boot_cmd_protect
-                0x0000000026f46d74                __u_boot_cmd_erase
-                0x0000000026f46d90                __u_boot_cmd_flinfo
-                0x0000000026f46dac                __u_boot_cmd_question_mark
-                0x0000000026f46dc8                __u_boot_cmd_help
-                0x0000000026f46de4                __u_boot_cmd_itest
-                0x0000000026f46e00                __u_boot_cmd_loady
-                0x0000000026f46e1c                __u_boot_cmd_loadb
-                0x0000000026f46e38                __u_boot_cmd_mtest
-                0x0000000026f46e54                __u_boot_cmd_loop
-                0x0000000026f46e70                __u_boot_cmd_base
-                0x0000000026f46e8c                __u_boot_cmd_crc32
-                0x0000000026f46ea8                __u_boot_cmd_cmp
-                0x0000000026f46ec4                __u_boot_cmd_cp
-                0x0000000026f46ee0                __u_boot_cmd_mw
-                0x0000000026f46efc                __u_boot_cmd_nm
-                0x0000000026f46f18                __u_boot_cmd_mm
-                0x0000000026f46f34                __u_boot_cmd_md
-                0x0000000026f46f50                __u_boot_cmd_sleep
-                0x0000000026f46f6c                __u_boot_cmd_mmc
-                0x0000000026f46f88                __u_boot_cmd_mmcinfo
-                0x0000000026f46fa4                __u_boot_cmd_nboot
-                0x0000000026f46fc0                __u_boot_cmd_nand
-                0x0000000026f46fdc                __u_boot_cmd_ping
-                0x0000000026f46ff8                __u_boot_cmd_nfs
-                0x0000000026f47014                __u_boot_cmd_dhcp
-                0x0000000026f47030                __u_boot_cmd_tftpboot
-                0x0000000026f4704c                __u_boot_cmd_bootp
-                0x0000000026f47068                __u_boot_cmd_run
-                0x0000000026f47084                __u_boot_cmd_setenv
-                0x0000000026f470a0                __u_boot_cmd_printenv
-                0x0000000026f470bc                __u_boot_cmd_editenv
-                0x0000000026f470d8                __u_boot_cmd_env
-                0x0000000026f470f4                __u_boot_cmd_saveenv
-                0x0000000026f47110                __u_boot_cmd_sf
-                0x0000000026f4712c                __u_boot_cmd_source
-                0x0000000026f47148                __u_boot_cmd_true
-                0x0000000026f47164                __u_boot_cmd_false
-                0x0000000026f47180                __u_boot_cmd_test
-                0x0000000026f4719c                __u_boot_cmd_usbboot
-                0x0000000026f471b8                __u_boot_cmd_usb
-                0x0000000026f471d4                __u_boot_cmd_version
-                0x0000000026f471f0                __u_boot_cmd_imxtract
-                0x0000000026f4720c                __u_boot_cmd_showvar
-                0x0000000026f47228                __u_boot_cmd_cls
-                0x0000000026f47244                __u_boot_cmd_end = .
-                0x0000000026f47244                . = ALIGN (0x4)
-                0x0000000026f47244                __image_copy_end = .
+ .u_boot_cmd    0x0000000026f4620c      0x620 common/libcommon.o
+                0x0000000026f4620c                __u_boot_cmd_reset
+                0x0000000026f46228                __u_boot_cmd_go
+                0x0000000026f46244                __u_boot_cmd_bootz
+                0x0000000026f46260                __u_boot_cmd_bootd
+                0x0000000026f4627c                __u_boot_cmd_boot
+                0x0000000026f46298                __u_boot_cmd_bootm
+                0x0000000026f462b4                __u_boot_cmd_coninfo
+                0x0000000026f462d0                __u_boot_cmd_echo
+                0x0000000026f462ec                __u_boot_cmd_exit
+                0x0000000026f46308                __u_boot_cmd_fatinfo
+                0x0000000026f46324                __u_boot_cmd_fatls
+                0x0000000026f46340                __u_boot_cmd_fatload
+                0x0000000026f4635c                __u_boot_cmd_fdt
+                0x0000000026f46378                __u_boot_cmd_protect
+                0x0000000026f46394                __u_boot_cmd_erase
+                0x0000000026f463b0                __u_boot_cmd_flinfo
+                0x0000000026f463cc                __u_boot_cmd_question_mark
+                0x0000000026f463e8                __u_boot_cmd_help
+                0x0000000026f46404                __u_boot_cmd_itest
+                0x0000000026f46420                __u_boot_cmd_loady
+                0x0000000026f4643c                __u_boot_cmd_loadb
+                0x0000000026f46458                __u_boot_cmd_mtest
+                0x0000000026f46474                __u_boot_cmd_loop
+                0x0000000026f46490                __u_boot_cmd_base
+                0x0000000026f464ac                __u_boot_cmd_crc32
+                0x0000000026f464c8                __u_boot_cmd_cmp
+                0x0000000026f464e4                __u_boot_cmd_cp
+                0x0000000026f46500                __u_boot_cmd_mw
+                0x0000000026f4651c                __u_boot_cmd_nm
+                0x0000000026f46538                __u_boot_cmd_mm
+                0x0000000026f46554                __u_boot_cmd_md
+                0x0000000026f46570                __u_boot_cmd_sleep
+                0x0000000026f4658c                __u_boot_cmd_nboot
+                0x0000000026f465a8                __u_boot_cmd_nand
+                0x0000000026f465c4                __u_boot_cmd_ping
+                0x0000000026f465e0                __u_boot_cmd_nfs
+                0x0000000026f465fc                __u_boot_cmd_dhcp
+                0x0000000026f46618                __u_boot_cmd_tftpboot
+                0x0000000026f46634                __u_boot_cmd_bootp
+                0x0000000026f46650                __u_boot_cmd_run
+                0x0000000026f4666c                __u_boot_cmd_setenv
+                0x0000000026f46688                __u_boot_cmd_printenv
+                0x0000000026f466a4                __u_boot_cmd_editenv
+                0x0000000026f466c0                __u_boot_cmd_env
+                0x0000000026f466dc                __u_boot_cmd_saveenv
+                0x0000000026f466f8                __u_boot_cmd_sf
+                0x0000000026f46714                __u_boot_cmd_source
+                0x0000000026f46730                __u_boot_cmd_true
+                0x0000000026f4674c                __u_boot_cmd_false
+                0x0000000026f46768                __u_boot_cmd_test
+                0x0000000026f46784                __u_boot_cmd_usbboot
+                0x0000000026f467a0                __u_boot_cmd_usb
+                0x0000000026f467bc                __u_boot_cmd_version
+                0x0000000026f467d8                __u_boot_cmd_imxtract
+                0x0000000026f467f4                __u_boot_cmd_showvar
+                0x0000000026f46810                __u_boot_cmd_cls
+                0x0000000026f4682c                __u_boot_cmd_end = .
+                0x0000000026f4682c                . = ALIGN (0x4)
+                0x0000000026f4682c                __image_copy_end = .
 
-.rel.dyn        0x0000000026f47244     0x6328
-                0x0000000026f47244                __rel_dyn_start = .
+.rel.dyn        0x0000000026f4682c     0x61a0
+                0x0000000026f4682c                __rel_dyn_start = .
  *(.rel*)
  .rel.got       0x0000000000000000        0x0 arch/arm/cpu/armv7/start.o
  .rel.plt       0x0000000000000000        0x0 arch/arm/cpu/armv7/start.o
  .rel.iplt      0x0000000000000000        0x0 arch/arm/cpu/armv7/start.o
- .rel.text      0x0000000026f47244     0x47d0 arch/arm/cpu/armv7/start.o
- .rel.rodata    0x0000000026f4ba14      0x908 arch/arm/cpu/armv7/start.o
- .rel.data      0x0000000026f4c31c      0xb00 arch/arm/cpu/armv7/start.o
+ .rel.text      0x0000000026f4682c     0x4698 arch/arm/cpu/armv7/start.o
+ .rel.rodata    0x0000000026f4aec4      0x8f8 arch/arm/cpu/armv7/start.o
+ .rel.data      0x0000000026f4b7bc      0xb00 arch/arm/cpu/armv7/start.o
  .rel.u_boot_cmd
-                0x0000000026f4ce1c      0x750 arch/arm/cpu/armv7/start.o
-                0x0000000026f4d56c                __rel_dyn_end = .
+                0x0000000026f4c2bc      0x710 arch/arm/cpu/armv7/start.o
+                0x0000000026f4c9cc                __rel_dyn_end = .
 
-.dynsym         0x0000000026f4d56c       0xd0
-                0x0000000026f4d56c                __dynsym_start = .
+.dynsym         0x0000000026f4c9cc       0xd0
+                0x0000000026f4c9cc                __dynsym_start = .
  *(.dynsym)
- .dynsym        0x0000000026f4d56c       0xd0 arch/arm/cpu/armv7/start.o
-                0x0000000026f4d63c                _end = .
-                0x0000000026f4e000                . = ALIGN (0x1000)
+ .dynsym        0x0000000026f4c9cc       0xd0 arch/arm/cpu/armv7/start.o
+                0x0000000026f4ca9c                _end = .
+                0x0000000026f4d000                . = ALIGN (0x1000)
 
 .mmutable
  *(.mmutable)
 
-.bss            0x0000000026f47244    0x4268c
-                0x0000000026f47244                __bss_start = .
+.bss            0x0000000026f4682c    0x425a4
+                0x0000000026f4682c                __bss_start = .
  *(.bss)
- .bss           0x0000000026f47244        0x0 arch/arm/cpu/armv7/start.o
- .bss           0x0000000026f47244        0x0 arch/arm/cpu/armv7/at91/libat91.o
- .bss           0x0000000026f47244        0x0 arch/arm/cpu/armv7/libarmv7.o
- .bss           0x0000000026f47244        0x4 arch/arm/lib/libarm.o
-                0x0000000026f47244                monitor_flash_len
- *fill*         0x0000000026f47248       0x38 
- .bss           0x0000000026f47280     0xdb3c common/libcommon.o
-                0x0000000026f47280                images
-                0x0000000026f473d8                working_fdt
-                0x0000000026f477e8                his_pad_count
-                0x0000000026f477ec                his_pad_char
-                0x0000000026f47805                his_eol
-                0x0000000026f4780c                os_data_init
-                0x0000000026f4781c                os_data_char
-                0x0000000026f47820                his_quote
-                0x0000000026f47824                send_ptr
-                0x0000000026f47828                send_parms
-                0x0000000026f47858                save_size
-                0x0000000026f4785c                save_addr
-                0x0000000026f47b6c                mem_malloc_brk
-                0x0000000026f47b70                mem_malloc_start
-                0x0000000026f47b74                mem_malloc_end
-                0x0000000026f47bb4                env_ptr
-                0x0000000026f47cec                last_return_code
-                0x0000000026f47df4                nesting_level
-                0x0000000026f47df8                lcd_is_enabled
-                0x0000000026f47e08                hist_num
-                0x0000000026f47e0c                hist_lines
-                0x0000000026f49220                hist_list
-                0x0000000026f49270                console_buffer
-                0x0000000026f493b0                stdio_devices
-                0x0000000026f493c0                usb_started
- .bss           0x0000000026f54dbc        0x0 disk/libdisk.o
- .bss           0x0000000026f54dbc        0x0 drivers/gpio/libgpio.o
- .bss           0x0000000026f54dbc        0x0 drivers/input/libinput.o
- .bss           0x0000000026f54dbc        0xc drivers/mmc/libmmc.o
- .bss           0x0000000026f54dc8      0x470 drivers/mtd/nand/libnand.o
-                0x0000000026f54dc8                nand_info
- .bss           0x0000000026f55238        0x0 drivers/mtd/spi/libspi_flash.o
- .bss           0x0000000026f55238        0x0 drivers/net/libnet.o
- .bss           0x0000000026f55238        0x0 drivers/pcmcia/libpcmcia.o
- .bss           0x0000000026f55238        0x0 drivers/rtc/librtc.o
- .bss           0x0000000026f55238        0x0 drivers/serial/libserial.o
- .bss           0x0000000026f55238        0x0 drivers/spi/libspi.o
- *fill*         0x0000000026f55238       0xc8 
- .bss           0x0000000026f55300     0x1500 drivers/usb/host/libusb_host.o
-                0x0000000026f55300                ptd
-                0x0000000026f55450                ohci_dev
-                0x0000000026f555e0                devgone
-                0x0000000026f555e4                phcca
-                0x0000000026f55600                ghcca
-                0x0000000026f55700                gtd
- .bss           0x0000000026f56800       0x18 drivers/video/libvideo.o
-                0x0000000026f56800                console_row
-                0x0000000026f56802                console_col
-                0x0000000026f56804                lcd_console_address
-                0x0000000026f56808                lcd_base
-                0x0000000026f5680c                lcd_color_bg
-                0x0000000026f56810                lcd_color_fg
-                0x0000000026f56814                lcd_line_length
- *fill*         0x0000000026f56818       0x28 
- .bss           0x0000000026f56840    0x300c0 fs/fat/libfat.o
-                0x0000000026f568c0                get_contents_vfatname_block
-                0x0000000026f66900                do_fat_read_at_block
-                0x0000000026f76900                get_dentfromdir_block
- .bss           0x0000000026f86900        0x0 lib/libfdt/libfdt.o
- .bss           0x0000000026f86900       0x1e lib/libgeneric.o
-                0x0000000026f86900                errno
-                0x0000000026f86904                ___strtok
- .bss           0x0000000026f8691e        0x0 lib/zlib/libz.o
- *fill*         0x0000000026f8691e        0x2 
- .bss           0x0000000026f86920     0x2fb0 net/libnet.o
-                0x0000000026f86920                NetArpWaitPacketMAC
-                0x0000000026f86924                NetArpWaitPacketIP
-                0x0000000026f86928                NetArpWaitReplyIP
-                0x0000000026f8692c                NetArpWaitTxPacketSize
-                0x0000000026f86930                NetArpTxPacket
-                0x0000000026f86934                NetArpPacketBuf
-                0x0000000026f86f74                NetArpWaitTimerStart
-                0x0000000026f86f78                NetArpWaitTry
-                0x0000000026f86f7c                dhcp_leasetime
-                0x0000000026f86f80                NetDHCPServerIP
-                0x0000000026f86f84                BootpID
-                0x0000000026f86f88                dhcp_state
-                0x0000000026f86f8c                BootpTry
-                0x0000000026f86f90                eth_current
-                0x0000000026f86fa8                net_state
-                0x0000000026f86fc0                NetRestartWrap
-                0x0000000026f86fd0                NetRxPacket
-                0x0000000026f86fd4                NetRxPacketLen
-                0x0000000026f86fd8                NetOurIP
-                0x0000000026f86fdc                NetOurEther
-                0x0000000026f86fe4                NetIPID
-                0x0000000026f86fe8                NetTxPacket
-                0x0000000026f86fec                NetEtherNullAddr
-                0x0000000026f86ff8                NetOurGatewayIP
-                0x0000000026f86ffc                NetOurSubnetMask
-                0x0000000026f87000                NetServerIP
-                0x0000000026f87004                PktBuf
-                0x0000000026f88e44                NetRxPackets
-                0x0000000026f88e54                NetBootFileXferSize
-                0x0000000026f88e58                BootFile
-                0x0000000026f88ed8                NetServerEther
-                0x0000000026f88ede                NetBootFileSize
-                0x0000000026f88ee0                NetOurRootPath
-                0x0000000026f88f20                NetOurHostName
-                0x0000000026f88f40                NetOurNISDomain
-                0x0000000026f88f60                NetOurDNSIP
-                0x0000000026f89814                NetPingIP
- .bss           0x0000000026f898d0        0x0 board/sdsIndustries/controller/libcontroller.o
- .bss           0x0000000026f898d0        0x0 /home/scott/controller/tap-uboot/arch/arm/lib/eabi_compat.o
- .bss           0x0000000026f898d0        0x0 /usr/lib/gcc-cross/arm-linux-gnueabi/4.7/libgcc.a(_udivsi3.o)
- .bss           0x0000000026f898d0        0x0 /usr/lib/gcc-cross/arm-linux-gnueabi/4.7/libgcc.a(_divsi3.o)
- .bss           0x0000000026f898d0        0x0 /usr/lib/gcc-cross/arm-linux-gnueabi/4.7/libgcc.a(_lshrdi3.o)
- .bss           0x0000000026f898d0        0x0 /usr/lib/gcc-cross/arm-linux-gnueabi/4.7/libgcc.a(_ashrdi3.o)
- .bss           0x0000000026f898d0        0x0 /usr/lib/gcc-cross/arm-linux-gnueabi/4.7/libgcc.a(_ashldi3.o)
- .bss           0x0000000026f898d0        0x0 /usr/lib/gcc-cross/arm-linux-gnueabi/4.7/libgcc.a(_dvmd_lnx.o)
-                0x0000000026f898d0                . = ALIGN (0x4)
-                0x0000000026f898d0                __bss_end__ = .
+ .bss           0x0000000026f4682c        0x0 arch/arm/cpu/armv7/start.o
+ .bss           0x0000000026f4682c        0x0 arch/arm/cpu/armv7/at91/libat91.o
+ .bss           0x0000000026f4682c        0x0 arch/arm/cpu/armv7/libarmv7.o
+ .bss           0x0000000026f4682c        0x4 arch/arm/lib/libarm.o
+                0x0000000026f4682c                monitor_flash_len
+ *fill*         0x0000000026f46830       0x10 
+ .bss           0x0000000026f46840     0xdb3c common/libcommon.o
+                0x0000000026f46840                images
+                0x0000000026f46998                working_fdt
+                0x0000000026f46da8                his_pad_count
+                0x0000000026f46dac                his_pad_char
+                0x0000000026f46dc5                his_eol
+                0x0000000026f46dcc                os_data_init
+                0x0000000026f46ddc                os_data_char
+                0x0000000026f46de0                his_quote
+                0x0000000026f46de4                send_ptr
+                0x0000000026f46de8                send_parms
+                0x0000000026f46e18                save_size
+                0x0000000026f46e1c                save_addr
+                0x0000000026f4712c                mem_malloc_brk
+                0x0000000026f47130                mem_malloc_start
+                0x0000000026f47134                mem_malloc_end
+                0x0000000026f47174                env_ptr
+                0x0000000026f472ac                last_return_code
+                0x0000000026f473b4                nesting_level
+                0x0000000026f473b8                lcd_is_enabled
+                0x0000000026f473c8                hist_num
+                0x0000000026f473cc                hist_lines
+                0x0000000026f487e0                hist_list
+                0x0000000026f48830                console_buffer
+                0x0000000026f48970                stdio_devices
+                0x0000000026f48980                usb_started
+ .bss           0x0000000026f5437c        0x0 disk/libdisk.o
+ .bss           0x0000000026f5437c        0x0 drivers/gpio/libgpio.o
+ .bss           0x0000000026f5437c        0x0 drivers/input/libinput.o
+ .bss           0x0000000026f5437c        0xc drivers/mmc/libmmc.o
+ .bss           0x0000000026f54388      0x470 drivers/mtd/nand/libnand.o
+                0x0000000026f54388                nand_info
+ .bss           0x0000000026f547f8        0x0 drivers/mtd/spi/libspi_flash.o
+ .bss           0x0000000026f547f8        0x0 drivers/net/libnet.o
+ .bss           0x0000000026f547f8        0x0 drivers/pcmcia/libpcmcia.o
+ .bss           0x0000000026f547f8        0x0 drivers/rtc/librtc.o
+ .bss           0x0000000026f547f8        0x0 drivers/serial/libserial.o
+ .bss           0x0000000026f547f8        0x0 drivers/spi/libspi.o
+ *fill*         0x0000000026f547f8        0x8 
+ .bss           0x0000000026f54800     0x1500 drivers/usb/host/libusb_host.o
+                0x0000000026f54800                ptd
+                0x0000000026f54950                ohci_dev
+                0x0000000026f54ae0                devgone
+                0x0000000026f54ae4                phcca
+                0x0000000026f54b00                ghcca
+                0x0000000026f54c00                gtd
+ .bss           0x0000000026f55d00       0x18 drivers/video/libvideo.o
+                0x0000000026f55d00                console_row
+                0x0000000026f55d02                console_col
+                0x0000000026f55d04                lcd_console_address
+                0x0000000026f55d08                lcd_base
+                0x0000000026f55d0c                lcd_color_bg
+                0x0000000026f55d10                lcd_color_fg
+                0x0000000026f55d14                lcd_line_length
+ *fill*         0x0000000026f55d18       0x28 
+ .bss           0x0000000026f55d40    0x300c0 fs/fat/libfat.o
+                0x0000000026f55dc0                get_contents_vfatname_block
+                0x0000000026f65e00                do_fat_read_at_block
+                0x0000000026f75e00                get_dentfromdir_block
+ .bss           0x0000000026f85e00        0x0 lib/libfdt/libfdt.o
+ .bss           0x0000000026f85e00       0x1e lib/libgeneric.o
+                0x0000000026f85e00                errno
+                0x0000000026f85e04                ___strtok
+ .bss           0x0000000026f85e1e        0x0 lib/zlib/libz.o
+ *fill*         0x0000000026f85e1e        0x2 
+ .bss           0x0000000026f85e20     0x2fb0 net/libnet.o
+                0x0000000026f85e20                NetArpWaitPacketMAC
+                0x0000000026f85e24                NetArpWaitPacketIP
+                0x0000000026f85e28                NetArpWaitReplyIP
+                0x0000000026f85e2c                NetArpWaitTxPacketSize
+                0x0000000026f85e30                NetArpTxPacket
+                0x0000000026f85e34                NetArpPacketBuf
+                0x0000000026f86474                NetArpWaitTimerStart
+                0x0000000026f86478                NetArpWaitTry
+                0x0000000026f8647c                dhcp_leasetime
+                0x0000000026f86480                NetDHCPServerIP
+                0x0000000026f86484                BootpID
+                0x0000000026f86488                dhcp_state
+                0x0000000026f8648c                BootpTry
+                0x0000000026f86490                eth_current
+                0x0000000026f864a8                net_state
+                0x0000000026f864c0                NetRestartWrap
+                0x0000000026f864d0                NetRxPacket
+                0x0000000026f864d4                NetRxPacketLen
+                0x0000000026f864d8                NetOurIP
+                0x0000000026f864dc                NetOurEther
+                0x0000000026f864e4                NetIPID
+                0x0000000026f864e8                NetTxPacket
+                0x0000000026f864ec                NetEtherNullAddr
+                0x0000000026f864f8                NetOurGatewayIP
+                0x0000000026f864fc                NetOurSubnetMask
+                0x0000000026f86500                NetServerIP
+                0x0000000026f86504                PktBuf
+                0x0000000026f88344                NetRxPackets
+                0x0000000026f88354                NetBootFileXferSize
+                0x0000000026f88358                BootFile
+                0x0000000026f883d8                NetServerEther
+                0x0000000026f883de                NetBootFileSize
+                0x0000000026f883e0                NetOurRootPath
+                0x0000000026f88420                NetOurHostName
+                0x0000000026f88440                NetOurNISDomain
+                0x0000000026f88460                NetOurDNSIP
+                0x0000000026f88d14                NetPingIP
+ .bss           0x0000000026f88dd0        0x0 board/sdsIndustries/controller/libcontroller.o
+ .bss           0x0000000026f88dd0        0x0 /home/scott/controller/tap-uboot/arch/arm/lib/eabi_compat.o
+ .bss           0x0000000026f88dd0        0x0 /usr/lib/gcc-cross/arm-linux-gnueabi/4.7/libgcc.a(_udivsi3.o)
+ .bss           0x0000000026f88dd0        0x0 /usr/lib/gcc-cross/arm-linux-gnueabi/4.7/libgcc.a(_divsi3.o)
+ .bss           0x0000000026f88dd0        0x0 /usr/lib/gcc-cross/arm-linux-gnueabi/4.7/libgcc.a(_lshrdi3.o)
+ .bss           0x0000000026f88dd0        0x0 /usr/lib/gcc-cross/arm-linux-gnueabi/4.7/libgcc.a(_ashrdi3.o)
+ .bss           0x0000000026f88dd0        0x0 /usr/lib/gcc-cross/arm-linux-gnueabi/4.7/libgcc.a(_ashldi3.o)
+ .bss           0x0000000026f88dd0        0x0 /usr/lib/gcc-cross/arm-linux-gnueabi/4.7/libgcc.a(_dvmd_lnx.o)
+                0x0000000026f88dd0                . = ALIGN (0x4)
+                0x0000000026f88dd0                __bss_end__ = .
 
-.dynbss         0x0000000026f4e000        0x0 load address 0x0000000026f898d0
+.dynbss         0x0000000026f4d000        0x0 load address 0x0000000026f88dd0
  .dynbss        0x0000000000000000        0x0 arch/arm/cpu/armv7/start.o
 
 /DISCARD/
@@ -1378,7 +1373,7 @@ OUTPUT(u-boot elf32-littlearm)
                                          0xdc (size before relaxing)
  .comment       0x0000000000000000       0x84 arch/arm/cpu/armv7/libarmv7.o
  .comment       0x0000000000000000      0x108 arch/arm/lib/libarm.o
- .comment       0x0000000000000000      0x790 common/libcommon.o
+ .comment       0x0000000000000000      0x764 common/libcommon.o
  .comment       0x0000000000000000       0x58 disk/libdisk.o
  .comment       0x0000000000000000       0x2c drivers/gpio/libgpio.o
  .comment       0x0000000000000000       0x2c drivers/input/libinput.o
@@ -1463,88 +1458,88 @@ OUTPUT(u-boot elf32-littlearm)
  .note.GNU-stack
                 0x0000000000000000        0x0 /usr/lib/gcc-cross/arm-linux-gnueabi/4.7/libgcc.a(_dvmd_lnx.o)
 
-.debug_line     0x0000000000000000    0x14799
+.debug_line     0x0000000000000000    0x14579
  .debug_line    0x0000000000000000       0xd9 arch/arm/cpu/armv7/start.o
- .debug_line    0x00000000000000d9      0x7d6 arch/arm/cpu/armv7/at91/libat91.o
- .debug_line    0x00000000000008af      0x3eb arch/arm/cpu/armv7/libarmv7.o
- .debug_line    0x0000000000000c9a      0x9c1 arch/arm/lib/libarm.o
- .debug_line    0x000000000000165b     0x7f4e common/libcommon.o
- .debug_line    0x00000000000095a9      0x4ca disk/libdisk.o
- .debug_line    0x0000000000009a73      0x1bf drivers/gpio/libgpio.o
- .debug_line    0x0000000000009c32      0x23b drivers/input/libinput.o
- .debug_line    0x0000000000009e6d      0x958 drivers/mmc/libmmc.o
- .debug_line    0x000000000000a7c5     0x2435 drivers/mtd/nand/libnand.o
- .debug_line    0x000000000000cbfa      0x6ca drivers/mtd/spi/libspi_flash.o
- .debug_line    0x000000000000d2c4      0x6d2 drivers/net/libnet.o
- .debug_line    0x000000000000d996      0x184 drivers/pcmcia/libpcmcia.o
- .debug_line    0x000000000000db1a       0xc2 drivers/rtc/librtc.o
- .debug_line    0x000000000000dbdc      0x194 drivers/serial/libserial.o
- .debug_line    0x000000000000dd70      0x1f6 drivers/spi/libspi.o
- .debug_line    0x000000000000df66      0x76d drivers/usb/host/libusb_host.o
- .debug_line    0x000000000000e6d3      0x22d drivers/video/libvideo.o
- .debug_line    0x000000000000e900      0x790 fs/fat/libfat.o
- .debug_line    0x000000000000f090      0xdf1 lib/libfdt/libfdt.o
- .debug_line    0x000000000000fe81     0x2369 lib/libgeneric.o
- .debug_line    0x00000000000121ea      0xb5c lib/zlib/libz.o
- .debug_line    0x0000000000012d46     0x16b7 net/libnet.o
- .debug_line    0x00000000000143fd      0x2a8 board/sdsIndustries/controller/libcontroller.o
- .debug_line    0x00000000000146a5       0xf4 /home/scott/controller/tap-uboot/arch/arm/lib/eabi_compat.o
+ .debug_line    0x00000000000000d9      0x7c6 arch/arm/cpu/armv7/at91/libat91.o
+ .debug_line    0x000000000000089f      0x3eb arch/arm/cpu/armv7/libarmv7.o
+ .debug_line    0x0000000000000c8a      0x9b5 arch/arm/lib/libarm.o
+ .debug_line    0x000000000000163f     0x7d60 common/libcommon.o
+ .debug_line    0x000000000000939f      0x4ca disk/libdisk.o
+ .debug_line    0x0000000000009869      0x1bf drivers/gpio/libgpio.o
+ .debug_line    0x0000000000009a28      0x23b drivers/input/libinput.o
+ .debug_line    0x0000000000009c63      0x958 drivers/mmc/libmmc.o
+ .debug_line    0x000000000000a5bb     0x2435 drivers/mtd/nand/libnand.o
+ .debug_line    0x000000000000c9f0      0x6ca drivers/mtd/spi/libspi_flash.o
+ .debug_line    0x000000000000d0ba      0x6d2 drivers/net/libnet.o
+ .debug_line    0x000000000000d78c      0x184 drivers/pcmcia/libpcmcia.o
+ .debug_line    0x000000000000d910       0xc2 drivers/rtc/librtc.o
+ .debug_line    0x000000000000d9d2      0x194 drivers/serial/libserial.o
+ .debug_line    0x000000000000db66      0x1f6 drivers/spi/libspi.o
+ .debug_line    0x000000000000dd5c      0x76d drivers/usb/host/libusb_host.o
+ .debug_line    0x000000000000e4c9      0x22d drivers/video/libvideo.o
+ .debug_line    0x000000000000e6f6      0x790 fs/fat/libfat.o
+ .debug_line    0x000000000000ee86      0xdf1 lib/libfdt/libfdt.o
+ .debug_line    0x000000000000fc77     0x2369 lib/libgeneric.o
+ .debug_line    0x0000000000011fe0      0xb5c lib/zlib/libz.o
+ .debug_line    0x0000000000012b3c     0x16b7 net/libnet.o
+ .debug_line    0x00000000000141f3      0x292 board/sdsIndustries/controller/libcontroller.o
+ .debug_line    0x0000000000014485       0xf4 /home/scott/controller/tap-uboot/arch/arm/lib/eabi_compat.o
 
-.debug_info     0x0000000000000000    0x7c334
+.debug_info     0x0000000000000000    0x7af00
  .debug_info    0x0000000000000000       0x62 arch/arm/cpu/armv7/start.o
- .debug_info    0x0000000000000062     0x2e18 arch/arm/cpu/armv7/at91/libat91.o
- .debug_info    0x0000000000002e7a     0x132c arch/arm/cpu/armv7/libarmv7.o
- .debug_info    0x00000000000041a6     0x3cfe arch/arm/lib/libarm.o
- .debug_info    0x0000000000007ea4    0x35dae common/libcommon.o
- .debug_info    0x000000000003dc52     0x1e58 disk/libdisk.o
- .debug_info    0x000000000003faaa     0x144c drivers/gpio/libgpio.o
- .debug_info    0x0000000000040ef6      0xfe8 drivers/input/libinput.o
- .debug_info    0x0000000000041ede     0x39f9 drivers/mmc/libmmc.o
- .debug_info    0x00000000000458d7     0xf298 drivers/mtd/nand/libnand.o
- .debug_info    0x0000000000054b6f     0x2902 drivers/mtd/spi/libspi_flash.o
- .debug_info    0x0000000000057471     0x2c5e drivers/net/libnet.o
- .debug_info    0x000000000005a0cf      0x566 drivers/pcmcia/libpcmcia.o
- .debug_info    0x000000000005a635      0x2b3 drivers/rtc/librtc.o
- .debug_info    0x000000000005a8e8      0x8e3 drivers/serial/libserial.o
- .debug_info    0x000000000005b1cb      0xa42 drivers/spi/libspi.o
- .debug_info    0x000000000005bc0d     0x3454 drivers/usb/host/libusb_host.o
- .debug_info    0x000000000005f061      0xa81 drivers/video/libvideo.o
- .debug_info    0x000000000005fae2     0x29cd fs/fat/libfat.o
- .debug_info    0x00000000000624af     0x5747 lib/libfdt/libfdt.o
- .debug_info    0x0000000000067bf6     0x77c5 lib/libgeneric.o
- .debug_info    0x000000000006f3bb     0x166a lib/zlib/libz.o
- .debug_info    0x0000000000070a25     0x9fcd net/libnet.o
- .debug_info    0x000000000007a9f2     0x15f4 board/sdsIndustries/controller/libcontroller.o
- .debug_info    0x000000000007bfe6      0x34e /home/scott/controller/tap-uboot/arch/arm/lib/eabi_compat.o
+ .debug_info    0x0000000000000062     0x2c57 arch/arm/cpu/armv7/at91/libat91.o
+ .debug_info    0x0000000000002cb9     0x132c arch/arm/cpu/armv7/libarmv7.o
+ .debug_info    0x0000000000003fe5     0x3cc5 arch/arm/lib/libarm.o
+ .debug_info    0x0000000000007caa    0x34c0a common/libcommon.o
+ .debug_info    0x000000000003c8b4     0x1e58 disk/libdisk.o
+ .debug_info    0x000000000003e70c     0x144c drivers/gpio/libgpio.o
+ .debug_info    0x000000000003fb58      0xfe8 drivers/input/libinput.o
+ .debug_info    0x0000000000040b40     0x39f9 drivers/mmc/libmmc.o
+ .debug_info    0x0000000000044539     0xf298 drivers/mtd/nand/libnand.o
+ .debug_info    0x00000000000537d1     0x2902 drivers/mtd/spi/libspi_flash.o
+ .debug_info    0x00000000000560d3     0x2c5e drivers/net/libnet.o
+ .debug_info    0x0000000000058d31      0x566 drivers/pcmcia/libpcmcia.o
+ .debug_info    0x0000000000059297      0x2b3 drivers/rtc/librtc.o
+ .debug_info    0x000000000005954a      0x8e3 drivers/serial/libserial.o
+ .debug_info    0x0000000000059e2d      0xa42 drivers/spi/libspi.o
+ .debug_info    0x000000000005a86f     0x3454 drivers/usb/host/libusb_host.o
+ .debug_info    0x000000000005dcc3      0xa81 drivers/video/libvideo.o
+ .debug_info    0x000000000005e744     0x29cd fs/fat/libfat.o
+ .debug_info    0x0000000000061111     0x5747 lib/libfdt/libfdt.o
+ .debug_info    0x0000000000066858     0x77c5 lib/libgeneric.o
+ .debug_info    0x000000000006e01d     0x166a lib/zlib/libz.o
+ .debug_info    0x000000000006f687     0x9fcd net/libnet.o
+ .debug_info    0x0000000000079654     0x155e board/sdsIndustries/controller/libcontroller.o
+ .debug_info    0x000000000007abb2      0x34e /home/scott/controller/tap-uboot/arch/arm/lib/eabi_compat.o
 
-.debug_abbrev   0x0000000000000000    0x15bec
+.debug_abbrev   0x0000000000000000    0x1587c
  .debug_abbrev  0x0000000000000000       0x14 arch/arm/cpu/armv7/start.o
  .debug_abbrev  0x0000000000000014      0xa86 arch/arm/cpu/armv7/at91/libat91.o
  .debug_abbrev  0x0000000000000a9a      0x64b arch/arm/cpu/armv7/libarmv7.o
  .debug_abbrev  0x00000000000010e5      0xeaf arch/arm/lib/libarm.o
- .debug_abbrev  0x0000000000001f94     0x87f2 common/libcommon.o
- .debug_abbrev  0x000000000000a786      0x717 disk/libdisk.o
- .debug_abbrev  0x000000000000ae9d      0x32f drivers/gpio/libgpio.o
- .debug_abbrev  0x000000000000b1cc      0x3a9 drivers/input/libinput.o
- .debug_abbrev  0x000000000000b575      0xa50 drivers/mmc/libmmc.o
- .debug_abbrev  0x000000000000bfc5     0x18b1 drivers/mtd/nand/libnand.o
- .debug_abbrev  0x000000000000d876      0x805 drivers/mtd/spi/libspi_flash.o
- .debug_abbrev  0x000000000000e07b      0x96b drivers/net/libnet.o
- .debug_abbrev  0x000000000000e9e6      0x1aa drivers/pcmcia/libpcmcia.o
- .debug_abbrev  0x000000000000eb90       0xd5 drivers/rtc/librtc.o
- .debug_abbrev  0x000000000000ec65      0x2c6 drivers/serial/libserial.o
- .debug_abbrev  0x000000000000ef2b      0x33c drivers/spi/libspi.o
- .debug_abbrev  0x000000000000f267      0x62d drivers/usb/host/libusb_host.o
- .debug_abbrev  0x000000000000f894      0x260 drivers/video/libvideo.o
- .debug_abbrev  0x000000000000faf4      0x759 fs/fat/libfat.o
- .debug_abbrev  0x000000000001024d      0xe43 lib/libfdt/libfdt.o
- .debug_abbrev  0x0000000000011090     0x2335 lib/libgeneric.o
- .debug_abbrev  0x00000000000133c5      0x45b lib/zlib/libz.o
- .debug_abbrev  0x0000000000013820     0x1e6e net/libnet.o
- .debug_abbrev  0x000000000001568e      0x40c board/sdsIndustries/controller/libcontroller.o
- .debug_abbrev  0x0000000000015a9a      0x152 /home/scott/controller/tap-uboot/arch/arm/lib/eabi_compat.o
+ .debug_abbrev  0x0000000000001f94     0x8491 common/libcommon.o
+ .debug_abbrev  0x000000000000a425      0x717 disk/libdisk.o
+ .debug_abbrev  0x000000000000ab3c      0x32f drivers/gpio/libgpio.o
+ .debug_abbrev  0x000000000000ae6b      0x3a9 drivers/input/libinput.o
+ .debug_abbrev  0x000000000000b214      0xa50 drivers/mmc/libmmc.o
+ .debug_abbrev  0x000000000000bc64     0x18b1 drivers/mtd/nand/libnand.o
+ .debug_abbrev  0x000000000000d515      0x805 drivers/mtd/spi/libspi_flash.o
+ .debug_abbrev  0x000000000000dd1a      0x96b drivers/net/libnet.o
+ .debug_abbrev  0x000000000000e685      0x1aa drivers/pcmcia/libpcmcia.o
+ .debug_abbrev  0x000000000000e82f       0xd5 drivers/rtc/librtc.o
+ .debug_abbrev  0x000000000000e904      0x2c6 drivers/serial/libserial.o
+ .debug_abbrev  0x000000000000ebca      0x33c drivers/spi/libspi.o
+ .debug_abbrev  0x000000000000ef06      0x62d drivers/usb/host/libusb_host.o
+ .debug_abbrev  0x000000000000f533      0x260 drivers/video/libvideo.o
+ .debug_abbrev  0x000000000000f793      0x759 fs/fat/libfat.o
+ .debug_abbrev  0x000000000000feec      0xe43 lib/libfdt/libfdt.o
+ .debug_abbrev  0x0000000000010d2f     0x2335 lib/libgeneric.o
+ .debug_abbrev  0x0000000000013064      0x45b lib/zlib/libz.o
+ .debug_abbrev  0x00000000000134bf     0x1e6e net/libnet.o
+ .debug_abbrev  0x000000000001532d      0x3fd board/sdsIndustries/controller/libcontroller.o
+ .debug_abbrev  0x000000000001572a      0x152 /home/scott/controller/tap-uboot/arch/arm/lib/eabi_compat.o
 
-.debug_aranges  0x0000000000000000      0xee0
+.debug_aranges  0x0000000000000000      0xec0
  .debug_aranges
                 0x0000000000000000       0x20 arch/arm/cpu/armv7/start.o
  .debug_aranges
@@ -1554,164 +1549,164 @@ OUTPUT(u-boot elf32-littlearm)
  .debug_aranges
                 0x0000000000000120       0xc0 arch/arm/lib/libarm.o
  .debug_aranges
-                0x00000000000001e0      0x570 common/libcommon.o
+                0x00000000000001e0      0x550 common/libcommon.o
  .debug_aranges
-                0x0000000000000750       0x40 disk/libdisk.o
+                0x0000000000000730       0x40 disk/libdisk.o
  .debug_aranges
-                0x0000000000000790       0x20 drivers/gpio/libgpio.o
+                0x0000000000000770       0x20 drivers/gpio/libgpio.o
  .debug_aranges
-                0x00000000000007b0       0x20 drivers/input/libinput.o
+                0x0000000000000790       0x20 drivers/input/libinput.o
  .debug_aranges
-                0x00000000000007d0       0x40 drivers/mmc/libmmc.o
+                0x00000000000007b0       0x40 drivers/mmc/libmmc.o
  .debug_aranges
-                0x0000000000000810       0xd8 drivers/mtd/nand/libnand.o
+                0x00000000000007f0       0xd8 drivers/mtd/nand/libnand.o
  .debug_aranges
-                0x00000000000008e8       0x40 drivers/mtd/spi/libspi_flash.o
+                0x00000000000008c8       0x40 drivers/mtd/spi/libspi_flash.o
  .debug_aranges
-                0x0000000000000928       0x40 drivers/net/libnet.o
+                0x0000000000000908       0x40 drivers/net/libnet.o
  .debug_aranges
-                0x0000000000000968       0x30 drivers/pcmcia/libpcmcia.o
+                0x0000000000000948       0x30 drivers/pcmcia/libpcmcia.o
  .debug_aranges
-                0x0000000000000998       0x18 drivers/rtc/librtc.o
+                0x0000000000000978       0x18 drivers/rtc/librtc.o
  .debug_aranges
-                0x00000000000009b0       0x20 drivers/serial/libserial.o
+                0x0000000000000990       0x20 drivers/serial/libserial.o
  .debug_aranges
-                0x00000000000009d0       0x20 drivers/spi/libspi.o
+                0x00000000000009b0       0x20 drivers/spi/libspi.o
  .debug_aranges
-                0x00000000000009f0       0x40 drivers/usb/host/libusb_host.o
+                0x00000000000009d0       0x40 drivers/usb/host/libusb_host.o
  .debug_aranges
-                0x0000000000000a30       0x20 drivers/video/libvideo.o
+                0x0000000000000a10       0x20 drivers/video/libvideo.o
  .debug_aranges
-                0x0000000000000a50       0x40 fs/fat/libfat.o
+                0x0000000000000a30       0x40 fs/fat/libfat.o
  .debug_aranges
-                0x0000000000000a90       0xc0 lib/libfdt/libfdt.o
+                0x0000000000000a70       0xc0 lib/libfdt/libfdt.o
  .debug_aranges
-                0x0000000000000b50      0x250 lib/libgeneric.o
+                0x0000000000000b30      0x250 lib/libgeneric.o
  .debug_aranges
-                0x0000000000000da0       0x20 lib/zlib/libz.o
+                0x0000000000000d80       0x20 lib/zlib/libz.o
  .debug_aranges
-                0x0000000000000dc0       0xe0 net/libnet.o
+                0x0000000000000da0       0xe0 net/libnet.o
  .debug_aranges
-                0x0000000000000ea0       0x20 board/sdsIndustries/controller/libcontroller.o
+                0x0000000000000e80       0x20 board/sdsIndustries/controller/libcontroller.o
  .debug_aranges
-                0x0000000000000ec0       0x20 /home/scott/controller/tap-uboot/arch/arm/lib/eabi_compat.o
+                0x0000000000000ea0       0x20 /home/scott/controller/tap-uboot/arch/arm/lib/eabi_compat.o
 
-.debug_frame    0x0000000000000000     0x7730
- .debug_frame   0x0000000000000000      0x29c arch/arm/cpu/armv7/at91/libat91.o
- .debug_frame   0x000000000000029c      0x1d0 arch/arm/cpu/armv7/libarmv7.o
- .debug_frame   0x000000000000046c      0x41c arch/arm/lib/libarm.o
- .debug_frame   0x0000000000000888     0x2e10 common/libcommon.o
- .debug_frame   0x0000000000003698      0x1d4 disk/libdisk.o
- .debug_frame   0x000000000000386c      0x150 drivers/gpio/libgpio.o
- .debug_frame   0x00000000000039bc       0xd0 drivers/input/libinput.o
- .debug_frame   0x0000000000003a8c      0x454 drivers/mmc/libmmc.o
- .debug_frame   0x0000000000003ee0      0xb20 drivers/mtd/nand/libnand.o
- .debug_frame   0x0000000000004a00      0x3b4 drivers/mtd/spi/libspi_flash.o
- .debug_frame   0x0000000000004db4      0x1e4 drivers/net/libnet.o
- .debug_frame   0x0000000000004f98       0x90 drivers/serial/libserial.o
- .debug_frame   0x0000000000005028       0x90 drivers/spi/libspi.o
- .debug_frame   0x00000000000050b8      0x1f8 drivers/usb/host/libusb_host.o
- .debug_frame   0x00000000000052b0       0x30 drivers/video/libvideo.o
- .debug_frame   0x00000000000052e0      0x278 fs/fat/libfat.o
- .debug_frame   0x0000000000005558      0xa6c lib/libfdt/libfdt.o
- .debug_frame   0x0000000000005fc4      0xb64 lib/libgeneric.o
- .debug_frame   0x0000000000006b28      0x124 lib/zlib/libz.o
- .debug_frame   0x0000000000006c4c      0x988 net/libnet.o
- .debug_frame   0x00000000000075d4      0x114 board/sdsIndustries/controller/libcontroller.o
- .debug_frame   0x00000000000076e8       0x48 /home/scott/controller/tap-uboot/arch/arm/lib/eabi_compat.o
+.debug_frame    0x0000000000000000     0x76b4
+ .debug_frame   0x0000000000000000      0x284 arch/arm/cpu/armv7/at91/libat91.o
+ .debug_frame   0x0000000000000284      0x1d0 arch/arm/cpu/armv7/libarmv7.o
+ .debug_frame   0x0000000000000454      0x41c arch/arm/lib/libarm.o
+ .debug_frame   0x0000000000000870     0x2dbc common/libcommon.o
+ .debug_frame   0x000000000000362c      0x1d4 disk/libdisk.o
+ .debug_frame   0x0000000000003800      0x150 drivers/gpio/libgpio.o
+ .debug_frame   0x0000000000003950       0xd0 drivers/input/libinput.o
+ .debug_frame   0x0000000000003a20      0x454 drivers/mmc/libmmc.o
+ .debug_frame   0x0000000000003e74      0xb20 drivers/mtd/nand/libnand.o
+ .debug_frame   0x0000000000004994      0x3b4 drivers/mtd/spi/libspi_flash.o
+ .debug_frame   0x0000000000004d48      0x1e4 drivers/net/libnet.o
+ .debug_frame   0x0000000000004f2c       0x90 drivers/serial/libserial.o
+ .debug_frame   0x0000000000004fbc       0x90 drivers/spi/libspi.o
+ .debug_frame   0x000000000000504c      0x1f8 drivers/usb/host/libusb_host.o
+ .debug_frame   0x0000000000005244       0x30 drivers/video/libvideo.o
+ .debug_frame   0x0000000000005274      0x278 fs/fat/libfat.o
+ .debug_frame   0x00000000000054ec      0xa6c lib/libfdt/libfdt.o
+ .debug_frame   0x0000000000005f58      0xb64 lib/libgeneric.o
+ .debug_frame   0x0000000000006abc      0x124 lib/zlib/libz.o
+ .debug_frame   0x0000000000006be0      0x988 net/libnet.o
+ .debug_frame   0x0000000000007568      0x104 board/sdsIndustries/controller/libcontroller.o
+ .debug_frame   0x000000000000766c       0x48 /home/scott/controller/tap-uboot/arch/arm/lib/eabi_compat.o
 
-.debug_str      0x0000000000000000     0xba70
- .debug_str     0x0000000000000000      0x61e arch/arm/cpu/armv7/at91/libat91.o
-                                       0x12ca (size before relaxing)
- .debug_str     0x000000000000061e      0x355 arch/arm/cpu/armv7/libarmv7.o
+.debug_str      0x0000000000000000     0xb9b1
+ .debug_str     0x0000000000000000      0x60d arch/arm/cpu/armv7/at91/libat91.o
+                                       0x12b9 (size before relaxing)
+ .debug_str     0x000000000000060d      0x355 arch/arm/cpu/armv7/libarmv7.o
                                         0x9f9 (size before relaxing)
- .debug_str     0x0000000000000973     0x12b0 arch/arm/lib/libarm.o
-                                       0x3069 (size before relaxing)
- .debug_str     0x0000000000001c23     0x4b95 common/libcommon.o
-                                      0x152cf (size before relaxing)
- .debug_str     0x00000000000067b8      0x25f disk/libdisk.o
+ .debug_str     0x0000000000000962     0x12a1 arch/arm/lib/libarm.o
+                                       0x305a (size before relaxing)
+ .debug_str     0x0000000000001c03     0x49f3 common/libcommon.o
+                                      0x14d1f (size before relaxing)
+ .debug_str     0x00000000000065f6      0x268 disk/libdisk.o
                                         0xa3c (size before relaxing)
- .debug_str     0x0000000000006a17      0x27f drivers/gpio/libgpio.o
+ .debug_str     0x000000000000685e      0x27f drivers/gpio/libgpio.o
                                         0x4fa (size before relaxing)
- .debug_str     0x0000000000006c96      0x2d4 drivers/input/libinput.o
+ .debug_str     0x0000000000006add      0x2d4 drivers/input/libinput.o
                                         0x596 (size before relaxing)
- .debug_str     0x0000000000006f6a      0x3df drivers/mmc/libmmc.o
+ .debug_str     0x0000000000006db1      0x4ff drivers/mmc/libmmc.o
                                         0xeb8 (size before relaxing)
- .debug_str     0x0000000000007349     0x104f drivers/mtd/nand/libnand.o
+ .debug_str     0x00000000000072b0     0x104f drivers/mtd/nand/libnand.o
                                        0x4580 (size before relaxing)
- .debug_str     0x0000000000008398      0x3bf drivers/mtd/spi/libspi_flash.o
+ .debug_str     0x00000000000082ff      0x3bf drivers/mtd/spi/libspi_flash.o
                                         0xa6a (size before relaxing)
- .debug_str     0x0000000000008757      0x2c2 drivers/net/libnet.o
+ .debug_str     0x00000000000086be      0x2c2 drivers/net/libnet.o
                                         0xcd0 (size before relaxing)
- .debug_str     0x0000000000008a19       0x4d drivers/pcmcia/libpcmcia.o
+ .debug_str     0x0000000000008980       0x4d drivers/pcmcia/libpcmcia.o
                                         0x415 (size before relaxing)
- .debug_str     0x0000000000008a66       0x34 drivers/rtc/librtc.o
+ .debug_str     0x00000000000089cd       0x34 drivers/rtc/librtc.o
                                         0x200 (size before relaxing)
- .debug_str     0x0000000000008a9a       0x9c drivers/serial/libserial.o
+ .debug_str     0x0000000000008a01       0x9c drivers/serial/libserial.o
                                         0x417 (size before relaxing)
- .debug_str     0x0000000000008b36       0xcb drivers/spi/libspi.o
+ .debug_str     0x0000000000008a9d       0xcb drivers/spi/libspi.o
                                         0x480 (size before relaxing)
- .debug_str     0x0000000000008c01      0x5c8 drivers/usb/host/libusb_host.o
+ .debug_str     0x0000000000008b68      0x5c8 drivers/usb/host/libusb_host.o
                                         0xfde (size before relaxing)
- .debug_str     0x00000000000091c9      0x19a drivers/video/libvideo.o
+ .debug_str     0x0000000000009130      0x19a drivers/video/libvideo.o
                                         0x641 (size before relaxing)
- .debug_str     0x0000000000009363      0x528 fs/fat/libfat.o
+ .debug_str     0x00000000000092ca      0x528 fs/fat/libfat.o
                                         0xbd8 (size before relaxing)
- .debug_str     0x000000000000988b      0x6c7 lib/libfdt/libfdt.o
+ .debug_str     0x00000000000097f2      0x6c7 lib/libfdt/libfdt.o
                                        0x1619 (size before relaxing)
- .debug_str     0x0000000000009f52      0x6cc lib/libgeneric.o
+ .debug_str     0x0000000000009eb9      0x6cc lib/libgeneric.o
                                        0x2988 (size before relaxing)
- .debug_str     0x000000000000a61e      0x285 lib/zlib/libz.o
+ .debug_str     0x000000000000a585      0x285 lib/zlib/libz.o
                                         0x6c2 (size before relaxing)
- .debug_str     0x000000000000a8a3     0x1012 net/libnet.o
+ .debug_str     0x000000000000a80a     0x1012 net/libnet.o
                                        0x4fdc (size before relaxing)
- .debug_str     0x000000000000b8b5      0x172 board/sdsIndustries/controller/libcontroller.o
-                                        0xa87 (size before relaxing)
- .debug_str     0x000000000000ba27       0x49 /home/scott/controller/tap-uboot/arch/arm/lib/eabi_compat.o
+ .debug_str     0x000000000000b81c      0x14c board/sdsIndustries/controller/libcontroller.o
+                                        0xa41 (size before relaxing)
+ .debug_str     0x000000000000b968       0x49 /home/scott/controller/tap-uboot/arch/arm/lib/eabi_compat.o
                                         0x24a (size before relaxing)
 
-.debug_loc      0x0000000000000000    0x4713a
- .debug_loc     0x0000000000000000      0x55b arch/arm/cpu/armv7/at91/libat91.o
- .debug_loc     0x000000000000055b      0x673 arch/arm/cpu/armv7/libarmv7.o
- .debug_loc     0x0000000000000bce      0xd27 arch/arm/lib/libarm.o
- .debug_loc     0x00000000000018f5    0x1bdc0 common/libcommon.o
- .debug_loc     0x000000000001d6b5      0xe0d disk/libdisk.o
- .debug_loc     0x000000000001e4c2      0xad9 drivers/gpio/libgpio.o
- .debug_loc     0x000000000001ef9b      0x951 drivers/input/libinput.o
- .debug_loc     0x000000000001f8ec     0x2034 drivers/mmc/libmmc.o
- .debug_loc     0x0000000000021920     0x8e28 drivers/mtd/nand/libnand.o
- .debug_loc     0x000000000002a748     0x1fd2 drivers/mtd/spi/libspi_flash.o
- .debug_loc     0x000000000002c71a     0x166b drivers/net/libnet.o
- .debug_loc     0x000000000002dd85      0x125 drivers/serial/libserial.o
- .debug_loc     0x000000000002deaa      0x3c5 drivers/spi/libspi.o
- .debug_loc     0x000000000002e26f     0x255f drivers/usb/host/libusb_host.o
- .debug_loc     0x00000000000307ce      0x155 drivers/video/libvideo.o
- .debug_loc     0x0000000000030923     0x2209 fs/fat/libfat.o
- .debug_loc     0x0000000000032b2c     0x4260 lib/libfdt/libfdt.o
- .debug_loc     0x0000000000036d8c     0x9581 lib/libgeneric.o
- .debug_loc     0x000000000004030d     0x2ba5 lib/zlib/libz.o
- .debug_loc     0x0000000000042eb2     0x4056 net/libnet.o
- .debug_loc     0x0000000000046f08      0x1e6 board/sdsIndustries/controller/libcontroller.o
- .debug_loc     0x00000000000470ee       0x4c /home/scott/controller/tap-uboot/arch/arm/lib/eabi_compat.o
+.debug_loc      0x0000000000000000    0x46c13
+ .debug_loc     0x0000000000000000      0x53b arch/arm/cpu/armv7/at91/libat91.o
+ .debug_loc     0x000000000000053b      0x673 arch/arm/cpu/armv7/libarmv7.o
+ .debug_loc     0x0000000000000bae      0xd27 arch/arm/lib/libarm.o
+ .debug_loc     0x00000000000018d5    0x1b8da common/libcommon.o
+ .debug_loc     0x000000000001d1af      0xe0d disk/libdisk.o
+ .debug_loc     0x000000000001dfbc      0xad9 drivers/gpio/libgpio.o
+ .debug_loc     0x000000000001ea95      0x951 drivers/input/libinput.o
+ .debug_loc     0x000000000001f3e6     0x2034 drivers/mmc/libmmc.o
+ .debug_loc     0x000000000002141a     0x8e28 drivers/mtd/nand/libnand.o
+ .debug_loc     0x000000000002a242     0x1fd2 drivers/mtd/spi/libspi_flash.o
+ .debug_loc     0x000000000002c214     0x166b drivers/net/libnet.o
+ .debug_loc     0x000000000002d87f      0x125 drivers/serial/libserial.o
+ .debug_loc     0x000000000002d9a4      0x3c5 drivers/spi/libspi.o
+ .debug_loc     0x000000000002dd69     0x255f drivers/usb/host/libusb_host.o
+ .debug_loc     0x00000000000302c8      0x155 drivers/video/libvideo.o
+ .debug_loc     0x000000000003041d     0x2209 fs/fat/libfat.o
+ .debug_loc     0x0000000000032626     0x4260 lib/libfdt/libfdt.o
+ .debug_loc     0x0000000000036886     0x9581 lib/libgeneric.o
+ .debug_loc     0x000000000003fe07     0x2ba5 lib/zlib/libz.o
+ .debug_loc     0x00000000000429ac     0x4056 net/libnet.o
+ .debug_loc     0x0000000000046a02      0x1c5 board/sdsIndustries/controller/libcontroller.o
+ .debug_loc     0x0000000000046bc7       0x4c /home/scott/controller/tap-uboot/arch/arm/lib/eabi_compat.o
 
-.debug_ranges   0x0000000000000000     0x3ba8
+.debug_ranges   0x0000000000000000     0x3b88
  .debug_ranges  0x0000000000000000       0xc0 arch/arm/cpu/armv7/at91/libat91.o
  .debug_ranges  0x00000000000000c0       0x60 arch/arm/cpu/armv7/libarmv7.o
  .debug_ranges  0x0000000000000120       0x60 arch/arm/lib/libarm.o
- .debug_ranges  0x0000000000000180     0x16d8 common/libcommon.o
- .debug_ranges  0x0000000000001858       0x60 disk/libdisk.o
- .debug_ranges  0x00000000000018b8       0xa8 drivers/gpio/libgpio.o
- .debug_ranges  0x0000000000001960      0x100 drivers/input/libinput.o
- .debug_ranges  0x0000000000001a60      0x178 drivers/mmc/libmmc.o
- .debug_ranges  0x0000000000001bd8      0x978 drivers/mtd/nand/libnand.o
- .debug_ranges  0x0000000000002550      0x208 drivers/mtd/spi/libspi_flash.o
- .debug_ranges  0x0000000000002758      0x3a0 drivers/net/libnet.o
- .debug_ranges  0x0000000000002af8       0x18 drivers/serial/libserial.o
- .debug_ranges  0x0000000000002b10       0x30 drivers/spi/libspi.o
- .debug_ranges  0x0000000000002b40      0x2e0 drivers/usb/host/libusb_host.o
- .debug_ranges  0x0000000000002e20      0x160 fs/fat/libfat.o
- .debug_ranges  0x0000000000002f80      0x2c0 lib/libfdt/libfdt.o
- .debug_ranges  0x0000000000003240      0x340 lib/libgeneric.o
- .debug_ranges  0x0000000000003580       0x20 lib/zlib/libz.o
- .debug_ranges  0x00000000000035a0      0x5f0 net/libnet.o
- .debug_ranges  0x0000000000003b90       0x18 board/sdsIndustries/controller/libcontroller.o
+ .debug_ranges  0x0000000000000180     0x16b8 common/libcommon.o
+ .debug_ranges  0x0000000000001838       0x60 disk/libdisk.o
+ .debug_ranges  0x0000000000001898       0xa8 drivers/gpio/libgpio.o
+ .debug_ranges  0x0000000000001940      0x100 drivers/input/libinput.o
+ .debug_ranges  0x0000000000001a40      0x178 drivers/mmc/libmmc.o
+ .debug_ranges  0x0000000000001bb8      0x978 drivers/mtd/nand/libnand.o
+ .debug_ranges  0x0000000000002530      0x208 drivers/mtd/spi/libspi_flash.o
+ .debug_ranges  0x0000000000002738      0x3a0 drivers/net/libnet.o
+ .debug_ranges  0x0000000000002ad8       0x18 drivers/serial/libserial.o
+ .debug_ranges  0x0000000000002af0       0x30 drivers/spi/libspi.o
+ .debug_ranges  0x0000000000002b20      0x2e0 drivers/usb/host/libusb_host.o
+ .debug_ranges  0x0000000000002e00      0x160 fs/fat/libfat.o
+ .debug_ranges  0x0000000000002f60      0x2c0 lib/libfdt/libfdt.o
+ .debug_ranges  0x0000000000003220      0x340 lib/libgeneric.o
+ .debug_ranges  0x0000000000003560       0x20 lib/zlib/libz.o
+ .debug_ranges  0x0000000000003580      0x5f0 net/libnet.o
+ .debug_ranges  0x0000000000003b70       0x18 board/sdsIndustries/controller/libcontroller.o
