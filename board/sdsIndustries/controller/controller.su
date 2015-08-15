@@ -1,7 +1,7 @@
 controller.c:52:6:sama5d3xek_nand_hw_init	8	static
 controller.c:162:6:lcd_enable	0	static
 controller.c:167:6:lcd_disable	0	static
-controller.c:183:6:lcd_show_board_info	40	static
+controller.c:183:6:lcd_show_board_info	8	static
 controller.c:215:5:board_early_init_f	8	static
 controller.c:225:5:board_init	8	static
 controller.c:263:5:dram_init	8	static

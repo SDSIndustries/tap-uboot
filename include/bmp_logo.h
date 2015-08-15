@@ -9,9 +9,9 @@
 #ifndef __BMP_LOGO_H__
 #define __BMP_LOGO_H__
 
-#define BMP_LOGO_WIDTH		160
-#define BMP_LOGO_HEIGHT		96
-#define BMP_LOGO_COLORS		31
+#define BMP_LOGO_WIDTH		240
+#define BMP_LOGO_HEIGHT		60
+#define BMP_LOGO_COLORS		240
 #define BMP_LOGO_OFFSET		16
 
 extern unsigned short bmp_logo_palette[];

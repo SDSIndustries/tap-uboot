@@ -190,12 +190,12 @@ void lcd_show_board_info(void)
 	sama5d3xek_tap_hw_init();
 #endif
 
-	lcd_printf ("%s\n", U_BOOT_VERSION);
+	//lcd_printf ("%s\n", U_BOOT_VERSION);
 	lcd_printf ("(C) 2014 SDS Industries, Inc.\n");
 	lcd_printf ("info@kilncontrol.com\n");
-	lcd_printf ("%s CPU at %s MHz\n",
-		get_cpu_name(),
-		strmhz(temp, get_cpu_clk_rate()));
+	//lcd_printf ("CPU at %s MHz\n",
+		//get_cpu_name(),
+	//	strmhz(temp, get_cpu_clk_rate()));
 
 	dram_size = 0;
 	for (i = 0; i < CONFIG_NR_DRAM_BANKS; i++)
@@ -205,9 +205,9 @@ void lcd_show_board_info(void)
 	for (i = 0; i < CONFIG_SYS_MAX_NAND_DEVICE; i++)
 		nand_size += nand_info[i].size;
 #endif
-	lcd_printf ("  %ld MB SDRAM, %ld MB NAND\n",
-		dram_size >> 20,
-		nand_size >> 20 );
+	//lcd_printf ("  %ld MB SDRAM, %ld MB NAND\n",
+	//	dram_size >> 20,
+	//	nand_size >> 20 );
 }
 #endif /* CONFIG_LCD_INFO */
 #endif
