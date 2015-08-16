@@ -91,6 +91,8 @@
 #define LCD_BPP				LCD_COLOR16
 #define LCD_OUTPUT_BPP                  24
 #define CONFIG_LCD_LOGO
+//SDS Industries add
+//#define CONFIG_SPLASH_SCREEN
 #undef LCD_TEST_PATTERN
 #define CONFIG_LCD_INFO
 #define CONFIG_LCD_INFO_BELOW_LOGO

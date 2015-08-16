@@ -152,6 +152,9 @@ ifeq ($(VENDOR),sdsIndustries)
 LOGO_BMP= logos/atmel.bmp
 endif
 
+#SDS Industries Add
+#SPLASHIMAGE= logos/atmel.bmp
+
 # now $(obj) is defined
 HOSTSRCS += $(addprefix $(SRCTREE)/,$(EXT_OBJ_FILES-y:.o=.c))
 HOSTSRCS += $(addprefix $(SRCTREE)/tools/,$(OBJ_FILES-y:.o=.c))
