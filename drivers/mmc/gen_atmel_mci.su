@@ -1,8 +1,0 @@
-gen_atmel_mci.c:138:12:mci_data_read	0	static
-gen_atmel_mci.c:157:12:mci_data_write	0	static
-gen_atmel_mci.c:65:13:dump_cmd	16	static
-gen_atmel_mci.c:182:1:mci_send_cmd	56	static
-gen_atmel_mci.c:72:13:0	24	static
-gen_atmel_mci.c:306:13:mci_set_ios	16	static
-gen_atmel_mci.c:342:12:mci_init	8	static
-gen_atmel_mci.c:368:5:atmel_mci_init	16	static
