@@ -150,6 +150,7 @@ LOGO_BMP= logos/intercontrol.bmp
 endif
 ifeq ($(VENDOR),sdsIndustries)
 LOGO_BMP= logos/atmel.bmp
+#LOGO_BMP= ../board/sdsIndustries/controller/sdsIndustries.bmp
 endif
 
 #SDS Industries Add
