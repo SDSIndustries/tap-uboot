@@ -1,2 +1,2 @@
-#define U_BOOT_DATE "Aug 17 2015"
-#define U_BOOT_TIME "11:25:49"
+#define U_BOOT_DATE "Jun 02 2016"
+#define U_BOOT_TIME "17:20:38"
