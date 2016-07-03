@@ -48,7 +48,7 @@ CONFIG_GMACB=y
 CONFIG_CMD_SAVEENV=y
 CONFIG_CMD_PING=y
 CONFIG_CMD_NAND=y
-CONFIG_BOOTARGS="console=ttyS0,115200 earlyprintk mtdparts=atmel_nand:256k(bootstrap)ro,512k(uboob)ro,256K(env),256k(evn_redundent),256k(spare),512k(dtb),6M(kernel)ro,-(rootfs) rootfstype=ubifs ubi.mtd=7 root=ubi0:rootfs, video=LVDS-1:480x272-16 ethaddr=3e:7d:a3:16:c8:dc, ipaddr=192.168.0.1 "
+CONFIG_BOOTARGS="console=ttyS0,115200 earlyprintk mtdparts=atmel_nand:256k(bootstrap)ro,512k(uboot)ro,256K(env),256k(evn_redundent),256k(spare),512k(dtb),6M(kernel)ro,-(rootfs) rootfstype=ubifs ubi.mtd=7 root=ubi0:rootfs ethaddr=3e:7d:a3:16:c8:dc, ipaddr=192.168.0.1 "
 CONFIG_SYS_AT91_UNKNOWN_CPU="Unknown CPU type"
 CONFIG_CMD_MEMORY=y
 CONFIG_SYS_MAXARGS=16
