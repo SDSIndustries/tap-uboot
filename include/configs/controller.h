@@ -50,7 +50,7 @@
 #undef CONFIG_INITRD_TAG
 #define CONFIG_SKIP_LOWLEVEL_INIT
 #define CONFIG_BOARD_EARLY_INIT_F
-#define CONFIG_DISPLAY_CPUINFO
+//#define CONFIG_DISPLAY_CPUINFO
 
 #define CONFIG_CMD_BOOTZ
 #define CONFIG_OF_LIBFDT		/* Device Tree support */
@@ -90,27 +90,28 @@
 #define CONFIG_LCD_4_3 //SDS Added for 4.3" LCD
 #define LCD_BPP				LCD_COLOR16
 #define LCD_OUTPUT_BPP                  24
-#define CONFIG_LCD_LOGO
-#undef LCD_TEST_PATTERN
-#define CONFIG_LCD_INFO
-#define CONFIG_LCD_INFO_BELOW_LOGO
+//#define CONFIG_LCD_LOGO
+//#undef LCD_TEST_PATTERN
+//#define CONFIG_LCD_INFO
+//#define CONFIG_LCD_INFO_BELOW_LOGO
 //#define CONFIG_SYS_WHITE_ON_BLACK //SDS Removed White on Black
-#define CONFIG_ATMEL_HLCD //SDS Modified from CONFIG_ATMEL_LCD
-#define CONFIG_ATMEL_LCD_RGB888 //SDS Modified from RGB565 to RGB888
+//#define CONFIG_ATMEL_HLCD //SDS Modified from CONFIG_ATMEL_LCD
+#define CONFIG_ATMEL_LCD
+//#define CONFIG_ATMEL_LCD_RGB888 //SDS Modified from RGB565 to RGB888
 #define CONFIG_SYS_CONSOLE_IS_IN_ENV
 
 /* board specific(not enough SRAM) */
 #define CONFIG_SAMA5D3_LCD_BASE		0x23E00000
 
-#define CONFIG_BOOTDELAY		1
+#define CONFIG_BOOTDELAY		0
 
 /*
  * BOOTP options
  */
-#define CONFIG_BOOTP_BOOTFILESIZE
-#define CONFIG_BOOTP_BOOTPATH
-#define CONFIG_BOOTP_GATEWAY
-#define CONFIG_BOOTP_HOSTNAME
+//#define CONFIG_BOOTP_BOOTFILESIZE
+//#define CONFIG_BOOTP_BOOTPATH
+//#define CONFIG_BOOTP_GATEWAY
+//#define CONFIG_BOOTP_HOSTNAME
 
 /*
  * Command line configuration.
@@ -137,7 +138,7 @@
 	(CONFIG_SYS_SDRAM_BASE + 4 * 1024 - GENERATED_GBL_DATA_SIZE)
 
 /* SerialFlash */
-#define CONFIG_CMD_SF
+//#define CONFIG_CMD_SF
 
 #ifdef CONFIG_CMD_SF
 #define CONFIG_ATMEL_SPI
@@ -179,14 +180,14 @@
 #endif
 
 /* Ethernet Hardware */
-#define CONFIG_MACB
-#define CONFIG_RMII
-#define CONFIG_GMACB
-#define CONFIG_RGMII
-#define CONFIG_NET_MULTI
-#define CONFIG_NET_RETRY_COUNT		20
-#define CONFIG_RESET_PHY_R
-#define CONFIG_MACB_SEARCH_PHY
+//#define CONFIG_MACB
+//#define CONFIG_RMII
+//#define CONFIG_GMACB
+//#define CONFIG_RGMII
+//#define CONFIG_NET_MULTI
+//#define CONFIG_NET_RETRY_COUNT		20
+//#define CONFIG_RESET_PHY_R
+//#define CONFIG_MACB_SEARCH_PHY
 
 
 /* MMC */
@@ -200,7 +201,7 @@
 #endif
 
 /* USB */
-#define CONFIG_CMD_USB
+//#define CONFIG_CMD_USB
 
 #ifdef CONFIG_CMD_USB
 #define CONFIG_USB_ATMEL
@@ -221,7 +222,8 @@
 #define CONFIG_SYS_LOAD_ADDR			0x22000000	/* load address */
 
 #define CONFIG_SYS_MEMTEST_START		CONFIG_SYS_SDRAM_BASE
-#define CONFIG_SYS_MEMTEST_END			0x23e00000
+//#define CONFIG_SYS_MEMTEST_END			0x23e00000
+#define CONFIG_SYS_MEMTEST_END			CONFIG_SYS_SDRAM_BASE
 
 #ifdef CONFIG_SYS_USE_NANDFLASH
 /* bootstrap + u-boot + env in nandflash */
@@ -229,7 +231,7 @@
 #define CONFIG_ENV_OFFSET		0xc0000
 #define CONFIG_ENV_OFFSET_REDUND	0x100000
 #define CONFIG_ENV_SIZE			0x20000
-#define CONFIG_BOOTCOMMAND	"nand read 0x22000000 0x200000 0x600000; " \
+//#define CONFIG_BOOTCOMMAND	"nand read 0x22000000 0x200000 0x600000; " \
 				"bootm 0x22000000"
 #else
 #define CONIG_ENV_IS_NOWHERE
@@ -241,13 +243,13 @@
 	"root=/dev/mmcblk0p2 "						\
 	"rw rootfstype=ext2 rootdelay=2"
 #else
-#define CONFIG_BOOTARGS							\
-	"console=ttyS0,115200 earlyprintk "				\
+//#define CONFIG_BOOTARGS							\
+	"console=ttyS0,115200 "				\
 	"mtdparts=atmel_nand:256k(bootstrap)ro,512k(uboot)ro,"		\
 	"256K(env),256k(evn_redundent),256k(spare),"			\
 	"512k(dtb),6M(kernel)ro,-(rootfs) "				\
-	"rootfstype=ubifs ubi.mtd=7 root=ubi0:rootfs "			\
-	"ethaddr=3e:7d:a3:16:c8:dc, ipaddr=192.168.0.1 " 
+	"rootfstype=ubifs ubi.mtd=7 root=ubi0:rootfs "			//\
+//	"ethaddr=3e:7d:a3:16:c8:dc, ipaddr=192.168.0.1 " 
 #endif
 
 #define CONFIG_BAUDRATE			115200

@@ -1,6 +1,0 @@
-atmel_spi.c:42:6:spi_init	0	static
-atmel_spi.c:47:19:spi_setup_slave	24	static
-atmel_spi.c:113:6:spi_free_slave	0	static
-atmel_spi.c:120:5:spi_claim_bus	0	static
-atmel_spi.c:136:6:spi_release_bus	0	static
-atmel_spi.c:144:5:spi_xfer	24	static

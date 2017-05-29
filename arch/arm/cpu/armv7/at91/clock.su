@@ -1,2 +1,0 @@
-clock.c:57:5:at91_clock_init	16	static
-clock.c:106:6:at91_periph_clk_enable	0	static

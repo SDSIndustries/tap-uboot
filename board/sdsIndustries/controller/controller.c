@@ -97,7 +97,8 @@ static void sama5d3xek_usb_hw_init(void)
 static void sama5d3xek_tap_hw_init(void)
 {
 	at91_set_pio_output(AT91_PIO_PORTB, 27, 0);
-	at91_set_pio_output(AT91_PIO_PORTD, 7, 0); //Set PD7 as low on start for DM Dimmer
+	at91_set_pio_output(AT91_PIO_PORTD, 7, 1); //Set PD7 as low on start for DM Dimmer
+	at91_set_pio_output(AT91_PIO_PORTB, 15, 1); //Set PD15 as high to disable display until kernel boot
 }
 #endif
 

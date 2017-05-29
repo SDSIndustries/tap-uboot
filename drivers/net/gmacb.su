@@ -1,9 +1,0 @@
-gmacb.c:113:13:macb_mdio_write	0	static
-gmacb.c:140:12:macb_mdio_read	0	static
-gmacb.c:251:13:reclaim_rx_buffers	8	static
-gmacb.c:523:13:macb_halt	0	static
-gmacb.c:541:12:macb_write_hwaddr	0	static
-gmacb.c:273:12:macb_recv	40	static
-gmacb.c:202:12:macb_send	16	static
-gmacb.c:473:12:macb_init	32	static
-gmacb.c:556:5:gmacb_eth_initialize	24	static

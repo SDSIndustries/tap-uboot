@@ -1,6 +1,0 @@
-atmel_usart.c:32:6:serial_setbrg	8	static
-atmel_usart.c:48:5:serial_init	8	static
-atmel_usart.c:76:6:serial_putc	8	static
-atmel_usart.c:87:6:serial_puts	8	static
-atmel_usart.c:93:5:serial_getc	0	static
-atmel_usart.c:102:5:serial_tstc	0	static

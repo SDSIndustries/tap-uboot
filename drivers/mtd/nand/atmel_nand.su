@@ -1,5 +1,0 @@
-atmel_nand.c:1127:13:at91_nand_hwcontrol	0	static
-atmel_nand.c:572:13:atmel_nand_pmecc_write_page	24	static
-atmel_nand.c:531:12:atmel_nand_pmecc_read_page	160	static
-atmel_nand.c:1166:5:atmel_nand_chip_init	24	static
-atmel_nand.c:1209:6:board_nand_init	8	static
